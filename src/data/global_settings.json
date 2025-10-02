@@ -1,0 +1,35 @@
+{
+  "title": "AgroTico Smart",
+  "description": "Innovación costarricense que transforma el campo",
+  "social_image": "/1200x630.jpg",
+  "base_url": "https://agroticosmart.vercel.app",
+  "demo": {
+    "title": "Dashboard",
+    "content": "<strong>Explora nuestro panel de datos</strong> y descubre cómo AgroTico Smart puede ayudarte a tomar decisiones precisas para tu finca, optimizando recursos y aumentando productividad."
+  },
+  "theme_color": "#0057a3",
+  "nav": [
+    {
+      "title": "Servicios",
+      "link": "/#servicios"
+    },
+    {
+      "title": "Casos de éxito",
+      "link": "/#casos_de_exito"
+    },
+    {
+      "title": "Precios",
+      "link": "/#precios"
+    },
+    {
+      "title": "Preguntas frecuentes",
+      "link": "/#faq"
+    }
+  ],
+  "social_links": [
+    {
+      "title": "Instagram",
+      "link": "https://www.instagram.com/agroticosmart/"
+    }
+  ]
+}

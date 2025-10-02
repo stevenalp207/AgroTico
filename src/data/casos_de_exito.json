@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Impulsando la agricultura.<br>Facilitando decisiones.",
+    "sector": "Agricultura de precisión",
+    "content": "<strong>AgroTico Smart ayudó a pequeños agricultores de Chorotega y Huetar Norte a tomar decisiones basadas en datos precisos de microclima y suelo.</strong> <br><br>El sistema optimizó la siembra, riego y fertilización, reduciendo pérdidas y aumentando la productividad.",
+    "case_study_link": "#",
+    "image": "/content-images/page1.png",
+    "image_alt": "iPad mostrando datos de AgroTico Smart",
+    "bg": "bg-gradient-to-r from-indigo-500 to-purple-600"
+  },
+  {
+    "title": "Innovación local.<br>Resultados tangibles.",
+    "sector": "Tecnología agrícola",
+    "content": "<strong>Implementamos sensores IoT y algoritmos de IA locales para generar alertas tempranas y recomendaciones personalizadas.</strong> <br><br>Esto permitió a las cooperativas mejorar la consistencia de la producción y aumentar ingresos de sus asociados.",
+    "case_study_link": "#",
+    "image": "/content-images/page2.png",
+    "image_alt": "iPad mostrando datos de AgroTico Smart",
+    "bg": "bg-gradient-to-r from-fuchsia-500 to-cyan-500"
+  },
+  {
+    "title": "Más eficiencia.<br>Menos incertidumbre.",
+    "sector": "Gestión de cultivos",
+    "content": "<strong>AgroTico Smart centraliza información de sensores, clima y suelo para que el agricultor pueda planificar con certeza.</strong> <br><br>El resultado: ahorro de agua, reducción de pérdidas por eventos climáticos y aumento del rendimiento entre 15% y 25%.",
+    "case_study_link": "#",
+    "image": "/content-images/page3.png",
+    "image_alt": "iPad mostrando datos de AgroTico Smart",
+    "bg": "bg-gradient-to-r from-pink-500 to-yellow-500"
+  }
+]

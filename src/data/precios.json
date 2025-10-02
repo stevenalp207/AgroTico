@@ -1,0 +1,16 @@
+[
+  {
+    "title": "Kit AgroTico Smart",
+    "tag": "Producto único",
+    "content": "Incluye todos los componentes necesarios para implementar agricultura de precisión en tu finca.",
+    "cta": "Comprar ahora",
+    "price": 300,
+    "services": [
+      { "item": "Componentes electrónicos y sensores especializados ($200)" },
+      { "item": "Impresiones 3D y chasis físico del módulo ($50)" },
+      { "item": "Servicios de nube y software para procesamiento de datos ($50)" },
+      { "item": "Capacitación técnica presencial incluida" },
+      { "item": "Soporte técnico local por 3 años" }
+    ]
+  }
+]

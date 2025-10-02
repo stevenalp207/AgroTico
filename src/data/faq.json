@@ -1,0 +1,30 @@
+[
+  {
+    "question": "¿Qué es AgroTico Smart y cómo me ayuda?",
+    "answer": "AgroTico Smart es una plataforma integral de agricultura de precisión que combina sensores IoT, inteligencia artificial y datos satelitales para ofrecer recomendaciones personalizadas sobre siembra, riego, fertilización y selección de cultivos según las condiciones de tu terreno."
+  },
+  {
+    "question": "¿Qué incluye el kit de AgroTico Smart?",
+    "answer": "El kit incluye todos los componentes necesarios: unidad de procesamiento con Raspberry Pi y Jetson Nano, sensores especializados (BMP390, SCD30, LTR390, humedad de suelo), módulo GPS, conectividad, software con actualizaciones por dos años, soporte técnico por tres años y capacitación técnica presencial."
+  },
+  {
+    "question": "¿Cuánto cuesta y hay financiamiento?",
+    "answer": "El kit base tiene un precio de $300 USD (~₡156.000), con posibilidad de subsidios de hasta 30% para pequeños productores y financiamiento en dos pagos (50% inicial y 50% post-cosecha). También existen programas de microcrédito con cooperativas para plazos de hasta 24 meses."
+  },
+  {
+    "question": "¿Funciona sin internet constante?",
+    "answer": "Sí. El sistema procesa datos localmente en el dispositivo y genera reportes técnicos accesibles sin necesidad de conectividad constante. La conexión a internet mejora la sincronización y recepción de alertas, pero no es obligatoria para el funcionamiento básico."
+  },
+  {
+    "question": "¿Qué beneficios reales obtendré?",
+    "answer": "AgroTico Smart permite planificar la siembra con certeza, optimizar recursos hídricos (ahorro ~30%), reducir pérdidas por eventos climáticos (~20%) y aumentar el rendimiento de cultivos entre 15% y 25%. Además, empodera a agricultores, mujeres y jóvenes, y fortalece cooperativas y comunidades rurales."
+  },
+  {
+    "question": "¿Quién me ayuda si tengo problemas con el producto?",
+    "answer": "Incluye soporte técnico local por tres años y capacitación presencial. Además, existen comités locales de validación y técnicos certificados que pueden asistir en instalación, calibración y mantenimiento del sistema."
+  },
+  {
+    "question": "¿AgroTico Smart es adecuado para todos los cultivos?",
+    "answer": "Inicialmente se enfoca en hortalizas de alto valor (lechuga, tomate, chiles) y cultivos comunes en las regiones Chorotega y Huetar Norte. El sistema puede adaptarse a otros cultivos a medida que se recopila información y se ajustan los modelos predictivos."
+  }
+]

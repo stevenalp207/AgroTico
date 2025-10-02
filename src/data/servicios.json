@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Transformamos la agricultura costarricense",
+    "content": "<strong>Los pequeños y medianos productores ahora pueden tomar decisiones basadas en datos precisos.</strong> Con AgroTico Smart, optimizan siembra, riego y fertilización, aumentando la productividad de sus fincas.",
+    "cta": "Conoce más sobre AgroTico Smart",
+    "image": "/content-images/blackspike-wallpaper-01.avif",
+    "image_alt": "Visualización de datos agrícolas en pantalla"
+  },
+  {
+    "title": "Plataforma digital intuitiva",
+    "content": "<strong>Nuestra interfaz web y aplicación permiten a los agricultores monitorear sus cultivos fácilmente.</strong> Alertas, recomendaciones y reportes claros para que todos puedan actuar con seguridad.",
+    "cta": "Explora nuestro dashboard",
+    "image": "/content-images/blackspike-wallpaper-02.avif",
+    "image_alt": "Pantalla mostrando datos de AgroTico Smart"
+  },
+  {
+    "title": "Tecnología avanzada en campo",
+    "content": "<strong>Integración de sensores IoT y modelos de IA locales.</strong> Medición de humedad, CO₂, presión y luz para generar recomendaciones hiperlocales y adaptadas al microclima de cada finca.",
+    "cta": "Descubre nuestros sensores",
+    "image": "/content-images/blackspike-wallpaper-03.avif",
+    "image_alt": "Sensores de campo instalados en una huerta"
+  },
+  {
+    "title": "Soporte y capacitación para todos",
+    "content": "<strong>Capacitación presencial y soporte técnico local incluidos.</strong> Facilitamos la adopción de tecnología y empoderamos a agricultores, jóvenes y mujeres rurales para maximizar el impacto del sistema.",
+    "cta": "Conoce nuestro soporte",
+    "image": "/content-images/blackspike-wallpaper-04.avif",
+    "image_alt": "Sesión de capacitación de AgroTico Smart"
+  }
+]
