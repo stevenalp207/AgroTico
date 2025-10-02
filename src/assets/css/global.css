@@ -1,9 +1,11 @@
 @import "tailwindcss";
 
 @theme {
+  --font-display: var(--font-garet-heavy), "ui-sans-serif", "system-ui", "sans-serif";
+  --font-body: var(--font-garet-book), "ui-sans-serif", "system-ui", "sans-serif";
 
-  --font-display: var(--font-inter-display), "ui-sans-serif", "system-ui", "sans-serif";
-  --font-body: var(--font-inter), "ui-sans-serif", "system-ui", "sans-serif";
+  --font-garet-heavy: "Garet-Heavy";
+  --font-garet-book: "Garet-Book";
 
   --color-bs-surface-0: #121212;
   --color-bs-surface-1: #18181B;

@@ -3,10 +3,12 @@
 
 .bs-h1 {
   @apply font-display font-medium text-balance text-5xl md:text-6xl;
+  color: #4caf50;
 }
 
 .bs-h2 {
   @apply font-display font-medium text-balance text-3xl md:text-4xl;
+  color: #4caf50;
 }
 
 .bs-h3 {
