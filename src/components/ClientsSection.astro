@@ -1,7 +1,5 @@
 ---
-
 const { title, clients } = Astro.props
-
 ---
 
 <section class="anim-wrapper bs-container bs-mt-lg grid">
@@ -12,25 +10,24 @@ const { title, clients } = Astro.props
   <!-- Logos -->
   <div class="bs-mt-md grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 place-content-center gap-4">
 
-    <!-- Logo link -->
-     {
-      clients.map( item =>
+    {
+      clients.map(item =>
 
-        <a class="group py-10 px-5 rounded-xl flex place-content-center bg-bs-surface-2/70 hover:bg-bs-surface-2 transition-colors duration-300" href={ item.link }>
+        <a class="group py-10 px-5 rounded-xl flex place-content-center bg-bs-surface-2/70 hover:bg-bs-surface-2 transition-colors duration-300" href={item.link}>
 
           <img
-            src={ item.image }
-            alt={ item.title }
-            class="opacity-60 max-w-32 min-h-16 group-hover:scale-[1.05] group-hover:-translate-y-1 group-hover:opacity-100 group-hover:-rotate-1 ease-bs-bounce transition-all duration-1000"
-            width="280"
-            height="80"
+            src={item.image}
+            alt={item.title}
+            class={`opacity-60 group-hover:scale-[1.05] group-hover:-translate-y-1 group-hover:opacity-100 group-hover:-rotate-1 ease-bs-bounce transition-all duration-1000
+              ${item.title === "CEDES Don Bosco" ? "!w-[280px] h-auto" : "!w-[250px] h-auto"}`}
             loading="lazy"
-          >
+            width={item.width}
+            height={item.height}
+          />
 
         </a>
 
       )
-
     }
 
   </div>

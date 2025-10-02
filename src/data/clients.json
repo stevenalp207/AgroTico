@@ -1,12 +1,16 @@
 [
   {
     "title": "CEDES Don Bosco",
-    "image": "/content-images/ci2a.svg",
-    "link": "https://www.cedesdonbosco.ed.cr/es/"
+    "image": "/content-images/cedes.svg",
+    "link": "https://www.cedesdonbosco.ed.cr/es/",
+    "width": "280",
+    "height": "80"
   },
   {
     "title": "CI2A",
-    "image": "/content-images/cedes.svg",
-    "link": "https://www.cedesdonbosco.ed.cr/es/"
+    "image": "/content-images/ci2a.svg",
+    "link": "https://www.cedesdonbosco.ed.cr/es/",
+    "width": "280",
+    "height": "80"
   }
 ]
