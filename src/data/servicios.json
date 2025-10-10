@@ -19,7 +19,7 @@
     "title": "Código abierto y colaborativo",
     "content": "<strong>Transparencia y mejora constante.</strong> Todo el software de AgroTico Smart es de código abierto, fomentando la colaboración global y permitiendo que universidades, desarrolladores y comunidades agrícolas lo adapten y optimicen libremente.",
     "cta": "Explora nuestro código en GitHub",
-    "cta_link": "https://github.com/agrotico-smart/AgroTicoSmart-RaspberryPi-Program",
+    "cta_link": "https://github.com/agrotico-smart/AgroTico-RaspberryPi",
     "image": "/content-images/blackspike-wallpaper-03.avif",
     "image_alt": "Pantalla mostrando repositorio de código abierto"
   },
