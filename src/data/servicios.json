@@ -3,7 +3,7 @@
     "title": "Dashboard inteligente y accesible",
     "content": "<strong>Visualiza tus datos agrícolas en tiempo real.</strong> Nuestra plataforma web y app móvil ofrecen alertas, reportes y recomendaciones claras para que cualquier productor pueda tomar decisiones seguras y basadas en evidencia.",
     "cta": "Explora el dashboard",
-    "cta_link": "https://agrotico-smart.vercel.app",
+    "cta_link": "https://agrotico-smart-dashboard.vercel.app/",
     "image": "/content-images/blackspike-wallpaper-02.avif",
     "image_alt": "Pantalla mostrando el dashboard de AgroTico Smart"
   },
