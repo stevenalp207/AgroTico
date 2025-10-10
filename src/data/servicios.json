@@ -1,30 +1,34 @@
 [
   {
-    "title": "Transformamos la agricultura costarricense",
-    "content": "<strong>Los pequeños y medianos productores ahora pueden tomar decisiones basadas en datos precisos.</strong> Con AgroTico Smart, optimizan siembra, riego y fertilización, aumentando la productividad de sus fincas.",
-    "cta": "Conoce más sobre AgroTico Smart",
-    "image": "/content-images/blackspike-wallpaper-01.avif",
-    "image_alt": "Visualización de datos agrícolas en pantalla"
-  },
-  {
-    "title": "Plataforma digital intuitiva",
-    "content": "<strong>Nuestra interfaz web y aplicación permiten a los agricultores monitorear sus cultivos fácilmente.</strong> Alertas, recomendaciones y reportes claros para que todos puedan actuar con seguridad.",
-    "cta": "Explora nuestro dashboard",
+    "title": "Dashboard inteligente y accesible",
+    "content": "<strong>Visualiza tus datos agrícolas en tiempo real.</strong> Nuestra plataforma web y app móvil ofrecen alertas, reportes y recomendaciones claras para que cualquier productor pueda tomar decisiones seguras y basadas en evidencia.",
+    "cta": "Explora el dashboard",
+    "cta_link": "https://agrotico-smart.vercel.app",
     "image": "/content-images/blackspike-wallpaper-02.avif",
-    "image_alt": "Pantalla mostrando datos de AgroTico Smart"
+    "image_alt": "Pantalla mostrando el dashboard de AgroTico Smart"
   },
   {
-    "title": "Tecnología avanzada en campo",
-    "content": "<strong>Integración de sensores IoT y modelos de IA locales.</strong> Medición de humedad, CO₂, presión y luz para generar recomendaciones hiperlocales y adaptadas al microclima de cada finca.",
-    "cta": "Descubre nuestros sensores",
+    "title": "Diseños abiertos de piezas 3D",
+    "content": "<strong>Reparamos, innovamos y compartimos.</strong> Todas las piezas físicas de AgroTico Smart, desde soportes de sensores hasta carcasas, cuentan con diseños 3D abiertos para que cualquier persona pueda imprimir, mejorar o adaptar según sus necesidades.",
+    "cta": "Descarga los modelos 3D",
+    "cta_link": "https://github.com/agrotico-smart/AS01-PARTES-IMPRESAS-3D/tree/main",
+    "image": "/content-images/blackspike-wallpaper-01.avif",
+    "image_alt": "Impresora 3D creando una pieza para sensor agrícola"
+  },
+  {
+    "title": "Código abierto y colaborativo",
+    "content": "<strong>Transparencia y mejora constante.</strong> Todo el software de AgroTico Smart es de código abierto, fomentando la colaboración global y permitiendo que universidades, desarrolladores y comunidades agrícolas lo adapten y optimicen libremente.",
+    "cta": "Explora nuestro código en GitHub",
+    "cta_link": "https://github.com/agrotico-smart/AgroTicoSmart-RaspberryPi-Program",
     "image": "/content-images/blackspike-wallpaper-03.avif",
-    "image_alt": "Sensores de campo instalados en una huerta"
+    "image_alt": "Pantalla mostrando repositorio de código abierto"
   },
   {
-    "title": "Soporte y capacitación para todos",
-    "content": "<strong>Capacitación presencial y soporte técnico local incluidos.</strong> Facilitamos la adopción de tecnología y empoderamos a agricultores, jóvenes y mujeres rurales para maximizar el impacto del sistema.",
-    "cta": "Conoce nuestro soporte",
+    "title": "Capacitaciones y conocimiento abierto",
+    "content": "<strong>La tecnología solo transforma si se comparte.</strong> Ofrecemos talleres, guías y materiales educativos para que productores, jóvenes y cooperativas aprendan a usar y mantener el sistema, impulsando una agricultura más inclusiva y sostenible.",
+    "cta": "Accede a nuestros recursos educativos",
+    "cta_link": "",
     "image": "/content-images/blackspike-wallpaper-04.avif",
-    "image_alt": "Sesión de capacitación de AgroTico Smart"
+    "image_alt": "Sesión de capacitación de AgroTico Smart con agricultores"
   }
 ]

@@ -67,10 +67,14 @@ const { title, services } = Astro.props
             <div class="bs-body-text text-pretty flex-1" set:html={ item.content } />
 
             {/* Cta */}
-            <button type="button" class="bs-btn inline-block self-start bs-mt-sm" onclick="window.location.href='https://agrotico-smart.vercel.app'">
-              { item.cta }
-            </button>
-
+              <a
+                class="bs-btn inline-block self-start bs-mt-sm"
+                href={item.cta_link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                { item.cta }
+              </a>
           </figcaption>
 
         </figure>
