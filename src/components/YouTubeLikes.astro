@@ -1,26 +1,10 @@
 ---
 const { videoId = "sx-50RiG60k", title = "Video Destacado" } = Astro.props;
 const API_KEY = import.meta.env.YOUTUBE_API_KEY;
-
-let videoData = null;
-
-if (API_KEY && videoId) {
-  try {
-    const res = await fetch(
-      `https://www.googleapis.com/youtube/v3/videos?part=statistics&id=${videoId}&key=${API_KEY}`
-    );
-    const data = await res.json();
-    videoData = data.items?.[0] || null;
-  } catch (e) {
-    console.error("Error al obtener datos del video:", e);
-  }
-}
-
-const likeCount = videoData?.statistics?.likeCount ?? "N/A";
-const viewCount = videoData?.statistics?.viewCount ?? "N/A";
-const commentCount = videoData?.statistics?.commentCount ?? "N/A";
 ---
-<section class="bs-container bs-mt-lg text-center">
+<section class="bs-container bs-mt-lg text-center" 
+         data-video-id={videoId} data-api-key={API_KEY}>
+
   <!-- Title -->
   <h2 class="bs-h2">{title}</h2>
 
@@ -37,34 +21,55 @@ const commentCount = videoData?.statistics?.commentCount ?? "N/A";
   </div>
 
   <!-- Stats Counters -->
-  <div class="mt-4 mx-auto flex flex-col md:flex-row justify-center gap-6 max-w-4xl">
+  <div class="mt-4 mx-auto flex flex-col md:flex-row justify-center gap-6 max-w-4xl" id="youtube-stats">
 
     <!-- Likes -->
-    <div
-      class="group flex-1 inline-flex flex-col items-center justify-center px-6 py-5 border rounded-2xl bg-bs-surface-2 border-bs-surface-3 transition-all duration-300 hover:scale-[1.03] hover:shadow-lg"
-    >
-      <span class="text-5xl md:text-6xl font-bold text-bs-foreground">👍 {likeCount}</span>
+    <div class="group flex-1 inline-flex flex-col items-center justify-center px-6 py-5 border rounded-2xl bg-bs-surface-2 border-bs-surface-3 transition-all duration-300 hover:scale-[1.03] hover:shadow-lg"
+         id="likes-counter">
+      <span class="text-5xl md:text-5xl font-bold text-bs-foreground">👍 Cargando...</span>
       <span class="text-base md:text-lg text-bs-foreground-dark mt-2">Likes</span>
     </div>
 
     <!-- Views -->
-    <div
-      class="group flex-1 inline-flex flex-col items-center justify-center px-6 py-5 border rounded-2xl bg-bs-surface-2 border-bs-surface-3 transition-all duration-300 hover:scale-[1.03] hover:shadow-lg"
-    >
-      <span class="text-5xl md:text-6xl font-bold text-bs-foreground">👀 {viewCount}</span>
+    <div class="group flex-1 inline-flex flex-col items-center justify-center px-6 py-5 border rounded-2xl bg-bs-surface-2 border-bs-surface-3 transition-all duration-300 hover:scale-[1.03] hover:shadow-lg"
+         id="views-counter">
+      <span class="text-5xl md:text-5xl font-bold text-bs-foreground">👀 Cargando...</span>
       <span class="text-base md:text-lg text-bs-foreground-dark mt-2">Vistas</span>
     </div>
 
     <!-- Comments -->
-    <div
-      class="group flex-1 inline-flex flex-col items-center justify-center px-6 py-5 border rounded-2xl bg-bs-surface-2 border-bs-surface-3 transition-all duration-300 hover:scale-[1.03] hover:shadow-lg"
-    >
-      <span class="text-5xl md:text-6xl font-bold text-bs-foreground">💬 {commentCount}</span>
+    <div class="group flex-1 inline-flex flex-col items-center justify-center px-6 py-5 border rounded-2xl bg-bs-surface-2 border-bs-surface-3 transition-all duration-300 hover:scale-[1.03] hover:shadow-lg"
+         id="comments-counter">
+      <span class="text-5xl md:text-5xl font-bold text-bs-foreground">💬 Cargando...</span>
       <span class="text-base md:text-lg text-bs-foreground-dark mt-2">Comentarios</span>
     </div>
 
   </div>
 
   <!-- Extra spacing below the counters -->
-  <div class="mt-30"></div>
+  <div class="mt-20"></div>
+
+  <!-- Script para actualizar stats en cliente -->
+  <script type="module" client:load>
+    const section = document.querySelector('section[data-video-id]');
+    const videoId = section.dataset.videoId;
+    const API_KEY = section.dataset.apiKey;
+
+    async function updateStats() {
+      try {
+        const res = await fetch(`https://www.googleapis.com/youtube/v3/videos?part=statistics&id=${videoId}&key=${API_KEY}`);
+        const data = await res.json();
+        const stats = data.items?.[0]?.statistics || {};
+
+        document.querySelector("#likes-counter span").textContent = `👍 ${stats.likeCount ?? "N/A"}`;
+        document.querySelector("#views-counter span").textContent = `👀 ${stats.viewCount ?? "N/A"}`;
+        document.querySelector("#comments-counter span").textContent = `💬 ${stats.commentCount ?? "N/A"}`;
+      } catch (e) {
+        console.error("Error al obtener stats de YouTube:", e);
+      }
+    }
+
+    updateStats();
+    setInterval(updateStats, 15000); // actualiza cada 15 segundos
+  </script>
 </section>
