@@ -19,6 +19,8 @@ import home from "../data/home.json"
 import pricing from "../data/precios.json"
 import global_settings from "../data/global_settings.json"
 import testimonials from "../data/testimonials.json"
+import YouTubeLikes from "../components/YouTubeLikes.astro"
+
 
 ---
 
@@ -29,6 +31,11 @@ import testimonials from "../data/testimonials.json"
     settings={ global_settings }
     title={ home.hero_title }
   />
+
+<YouTubeLikes   videoId="sx-50RiG60k"
+  title="Nuestro video promocional"
+/>
+
 
   <ServicesCarousel
     services={ services }

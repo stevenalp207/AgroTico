@@ -1,34 +1,23 @@
 ---
+const { videoId } = Astro.props;
+const API_KEY = import.meta.env.YOUTUBE_API_KEY;
 
-const { title, testimonials } = Astro.props
+let likeCount = null;
 
+if (API_KEY && videoId) {
+  try {
+    const res = await fetch(
+      `https://www.googleapis.com/youtube/v3/videos?part=statistics&id=${videoId}&key=${API_KEY}`
+    );
+    const data = await res.json();
+    likeCount = data.items?.[0]?.statistics?.likeCount || "N/A";
+  } catch (e) {
+    console.error("Error al obtener likes:", e);
+  }
+}
 ---
 
-<section class="bs-container bs-mt-lg">
-
-  <!-- Title -->
-  { title && <h2 class="bs-h2 text-center md:text-left">{ title }</h2>}
-
-  <!-- Testimonials -->
-  <div class="group bs-mt-md grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 place-content-center gap-4">
-
-    <!-- Quote -->
-    { testimonials.map( item =>
-
-      <blockquote
-        class:list={["group-hover:opacity-75 hover:opacity-100 duration-300 p-3 md:p-5 flex flex-col gap-3 justify-between border rounded-md bg-bs-surface-2 border-bs-surface-3 transition-all grid-flow-dense", item.quote.length > 100 ? "lg:col-span-2" : ""]}>
-
-        <!-- Text -->
-        <p set:html={ item.quote } class:list={["text-sm lg:text-lg", item.quote.length > 100 ? "line-clamp-4 lg:line-clamp-none" : ""]} />
-
-        <!-- Cite -->
-        <cite class="not-italic text-bs-foreground-dark text-sm font-semibold">@{ item.handle }</cite>
-
-      </blockquote>
-
-    )}
-
-  </div>
-
-</section>
-
+<div class="flex items-center gap-1 text-sm text-bs-foreground-dark">
+  <span>👍</span>
+  <span>{likeCount}</span>
+</div>
