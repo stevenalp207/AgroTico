@@ -2,7 +2,7 @@
 const { videoId = "sx-50RiG60k", title = "Video Destacado" } = Astro.props;
 const API_KEY = import.meta.env.YOUTUBE_API_KEY;
 
-let likeCount = null;
+let videoData = null;
 
 if (API_KEY && videoId) {
   try {
@@ -10,13 +10,16 @@ if (API_KEY && videoId) {
       `https://www.googleapis.com/youtube/v3/videos?part=statistics&id=${videoId}&key=${API_KEY}`
     );
     const data = await res.json();
-    likeCount = data.items?.[0]?.statistics?.likeCount || "N/A";
+    videoData = data.items?.[0] || null;
   } catch (e) {
-    console.error("Error al obtener likes:", e);
+    console.error("Error al obtener datos del video:", e);
   }
 }
----
 
+const likeCount = videoData?.statistics?.likeCount ?? "N/A";
+const viewCount = videoData?.statistics?.viewCount ?? "N/A";
+const commentCount = videoData?.statistics?.commentCount ?? "N/A";
+---
 <section class="bs-container bs-mt-lg text-center">
   <!-- Title -->
   <h2 class="bs-h2">{title}</h2>
@@ -26,25 +29,42 @@ if (API_KEY && videoId) {
     <iframe
       src={`https://www.youtube.com/embed/${videoId}`}
       class="w-full h-full"
-      title="YouTube video"
+      title={title}
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen
     ></iframe>
   </div>
 
-  <!-- Likes Counter -->
-  <div
-    class="group mt-4 inline-flex flex-col items-center justify-center px-8 py-6 border rounded-2xl bg-bs-surface-2 border-bs-surface-3 transition-all duration-300 hover:scale-[1.03] hover:shadow-lg"
-  >
-    <span class="text-5xl md:text-6xl font-bold text-bs-foreground">
-      👍 {likeCount ?? "Cargando..."}
-    </span>
-    <span class="text-base md:text-lg text-bs-foreground-dark mt-2">
-      Likes en YouTube
-    </span>
+  <!-- Stats Counters -->
+  <div class="mt-4 mx-auto flex flex-col md:flex-row justify-center gap-6 max-w-4xl">
+
+    <!-- Likes -->
+    <div
+      class="group flex-1 inline-flex flex-col items-center justify-center px-6 py-5 border rounded-2xl bg-bs-surface-2 border-bs-surface-3 transition-all duration-300 hover:scale-[1.03] hover:shadow-lg"
+    >
+      <span class="text-5xl md:text-6xl font-bold text-bs-foreground">👍 {likeCount}</span>
+      <span class="text-base md:text-lg text-bs-foreground-dark mt-2">Likes</span>
+    </div>
+
+    <!-- Views -->
+    <div
+      class="group flex-1 inline-flex flex-col items-center justify-center px-6 py-5 border rounded-2xl bg-bs-surface-2 border-bs-surface-3 transition-all duration-300 hover:scale-[1.03] hover:shadow-lg"
+    >
+      <span class="text-5xl md:text-6xl font-bold text-bs-foreground">👀 {viewCount}</span>
+      <span class="text-base md:text-lg text-bs-foreground-dark mt-2">Vistas</span>
+    </div>
+
+    <!-- Comments -->
+    <div
+      class="group flex-1 inline-flex flex-col items-center justify-center px-6 py-5 border rounded-2xl bg-bs-surface-2 border-bs-surface-3 transition-all duration-300 hover:scale-[1.03] hover:shadow-lg"
+    >
+      <span class="text-5xl md:text-6xl font-bold text-bs-foreground">💬 {commentCount}</span>
+      <span class="text-base md:text-lg text-bs-foreground-dark mt-2">Comentarios</span>
+    </div>
+
   </div>
 
-  <!-- Extra spacing below the counter -->
+  <!-- Extra spacing below the counters -->
   <div class="mt-12"></div>
 </section>
