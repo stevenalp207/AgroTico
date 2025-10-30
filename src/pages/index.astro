@@ -9,7 +9,10 @@ import ServicesCarousel from "../components/ServicesCarousel.astro"
 import HeroSection from "../components/HeroSection.astro"
 import PricingSection from "../components/PricingSection.astro"
 import QuoteSection from "../components/QuoteSection.astro"
+import YouTubeLikes from "../components/YouTubeLikes.astro"
+import TeamSection from "../components/TeamSection.astro"
 import TestimonialsSection from "../components/TestimonialsSection.astro"
+import ContactDialog from "../components/DialogModal.astro"
 
 import caseStudies from "../data/casos-de-exito.json"
 import clients from "../data/clients.json"
@@ -19,8 +22,7 @@ import home from "../data/home.json"
 import pricing from "../data/precios.json"
 import global_settings from "../data/global_settings.json"
 import testimonials from "../data/testimonials.json"
-import YouTubeLikes from "../components/YouTubeLikes.astro"
-
+import team from "../data/team.json"
 
 ---
 
@@ -32,19 +34,9 @@ import YouTubeLikes from "../components/YouTubeLikes.astro"
     title={ home.hero_title }
   />
 
-<YouTubeLikes   videoId="sx-50RiG60k"
-  title="Nuestro video promocional - Apoyanos tu like"
-/>
-
-
-  <ServicesCarousel
-    services={ services }
-    title={ home.services_title }
-  />
-
-  <ClientsSection
-    clients={ clients }
-    title={ home.clients_title }
+  <YouTubeLikes
+    videoId="sx-50RiG60k"
+    title="Nuestro video promocional - Apoyanos tu like"
   />
 
   <QuoteSection
@@ -52,22 +44,34 @@ import YouTubeLikes from "../components/YouTubeLikes.astro"
     content={ home.quote_content }
     image={ home.quote_image }
     role={ home.quote_role }
+  /> <!-- Descripcion del proyecto -->
+
+  <ServicesCarousel
+    services={ services }
+    title={ home.services_title }
+  /> <!-- Servicios del producto que ofrecemos -->
+
+  <TeamSection
+    title="Conoce al Equipo"
+    team={ team }
   />
+
+  <ClientsSection
+    clients={ clients }
+    title={ home.clients_title }
+  /> <!-- Patrocinadores y respaldo -->
 
   <CaseStudiesSection
     caseStudies={ caseStudies }
     title={ home.case_studies_title }
-  />
-  <!--
-  <TestimonialsSection
-    testimonials={ testimonials }
-    title={ home.testimonials_title }
-  />
-  -->
+  /> <!-- Nuestro impacto -->
+
   <PricingSection
     pricing={ pricing }
     title={ home.pricing_title }
-  />
+  /> <!-- Precio -->
+  <ContactDialog />
+
 
   <FaqSection
     faq={ faq }

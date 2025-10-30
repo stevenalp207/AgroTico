@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Jeisson Córdoba Vargas",
+    "role": "Tutor y Mentor Académico",
+    "image": "/team/jeisson.png",
+    "bio": "Guía al equipo con su experiencia y visión estratégica, asegurando que cada decisión técnica y metodológica esté alineada con buenas prácticas y con el impacto real en las comunidades rurales."
+  },
+  {
+    "name": "Steven Alpízar Gamboa",
+    "role": "Sistemas Embebidos - Electrónica Industrial",
+    "image": "/team/steven.png",
+    "bio": "Integra y programa los sensores, asegurando que los datos capturados en campo sean confiables y precisos."
+  },
+  {
+    "name": "Esteban Canales",
+    "role": "Desarrollo Full Stack - Desarrollo Web",
+    "image": "/team/beto.png",
+    "bio": "Arquitecto de la plataforma digital, desarrolla la API, algoritmos y la interfaz que lleva recomendaciones claras a los agricultores."
+  },
+  {
+    "name": "Luis Mauricio Ureña",
+    "role": "Diseño Mecánico y Manufactura - Mecánica de Precisión",
+    "image": "/team/luis.png",
+    "bio": "Diseña el chasis y la estructura del robot, optimizando para durabilidad, costo y facilidad de manufactura local."
+  },
+  {
+    "name": "Sebastián Pastrana",
+    "role": "Montaje e Integración Electrónica - Electrónica Industrial",
+    "image": "/team/pastra.png",
+    "bio": "Convierte los diseños en un robot físico y funcional, garantizando resistencia en condiciones reales del campo."
+  }
+]

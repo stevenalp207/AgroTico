@@ -1,0 +1,34 @@
+---
+const { title, team } = Astro.props
+---
+
+<section class="flex flex-col gap-12 py-20 px-6 bg-bs-surface-950 text-white">
+  <header class="text-center max-w-3xl mx-auto flex flex-col gap-4">
+    <h2 class="bs-h2 text-center">{title}</h2>
+    <p class="text-bs-neutral-200 text-lg leading-relaxed">
+      🌱🤖 Con mucho orgullo presentamos al equipo detrás de AgroTico Smart 🚜💡<br/>
+      Nuestro proyecto nació con un objetivo claro: llevar innovación real al campo costarricense,
+      ayudando a los agricultores a enfrentar el cambio climático con tecnología accesible y práctica.
+    </p>
+  </header>
+    <div class="flex flex-wrap justify-center gap-8 max-w-6xl mx-auto">
+    {team.map((member) => (
+        <article
+        class="w-full sm:w-[45%] lg:w-[30%] bg-bs-surface-0/50 backdrop-blur-xl border border-white/10 rounded-xl overflow-hidden hover:scale-[1.02] transition-transform duration-500"
+        >
+        <img
+            src={member.image}
+            alt={member.name}
+            class="h-64 w-full object-cover group-hover:scale-105 transition-transform duration-700"
+        />
+        <div class="p-6 flex flex-col gap-2 text-center">
+            <h3 class="font-display text-2xl font-medium">{member.name}</h3>
+            <p class="uppercase text-sm tracking-widest text-bs-primary-400 font-semibold">
+            {member.role}
+            </p>
+            <p class="text-sm text-bs-neutral-300 leading-relaxed" set:html={member.bio} />
+        </div>
+        </article>
+    ))}
+    </div>
+</section>
