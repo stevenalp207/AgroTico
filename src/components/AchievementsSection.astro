@@ -1,0 +1,24 @@
+---
+const { achievements } = Astro.props;
+---
+
+<section class="py-20 px-6 bg-bs-surface-950 text-white">
+  <header class="text-center max-w-3xl mx-auto flex flex-col gap-4 mb-12">
+    <h2 class="bs-h2">Nuestros Logros</h2>
+    <p class="text-bs-neutral-300 text-lg leading-relaxed">
+      AgroTico Smart se ha destacado en competencias y reconocimientos, mostrando el compromiso y la innovación de nuestro equipo.
+    </p>
+  </header>
+
+  <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+    {achievements.map((item) => (
+      <div class="group flex flex-col items-center gap-4 p-6 bg-bs-surface-0/50 rounded-xl border border-white/10 shadow-lg hover:scale-105 transition-transform duration-500">
+        <div class="w-16 h-16 flex items-center justify-center rounded-full bg-gradient-to-r from-green-400 to-blue-500 text-white text-2xl font-bold">
+          🏆
+        </div>
+        <h3 class="font-display text-xl font-semibold text-center">{item.title}</h3>
+        {item.year && <p class="text-sm text-bs-neutral-300">{item.year}</p>}
+      </div>
+    ))}
+  </div>
+</section>
