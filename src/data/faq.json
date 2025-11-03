@@ -5,7 +5,7 @@
   },
   {
     "question": "¿Qué incluye el kit de AgroTico Smart?",
-    "answer": "El kit incluye todos los componentes necesarios: unidad de procesamiento con Raspberry Pi y Jetson Nano, sensores especializados (BMP390, SCD30, LTR390, humedad de suelo), módulo GPS, conectividad, software con actualizaciones por dos años, soporte técnico por tres años y capacitación técnica presencial."
+    "answer": "El kit incluye todos los componentes necesarios: unidad de procesamiento con Raspberry Pi, sensores especializados (BMP390, SCD30, LTR390, humedad de suelo), módulo GPS, conectividad, software con actualizaciones por dos años, soporte técnico por tres años y capacitación técnica presencial."
   },
   {
     "question": "¿Cuánto cuesta y hay financiamiento?",
