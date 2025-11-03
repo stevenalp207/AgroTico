@@ -1,7 +1,10 @@
 import { defineConfig } from 'astro/config'
 import tailwindcss from '@tailwindcss/vite'
+import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
+  site: 'https://agroticosmart.vercel.app', // 👈 obligatorio, URL base de tu web
+  integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()]
   },
