@@ -1,15 +1,16 @@
 ---
+import SectionHeader from "./SectionHeader.astro";
 const { achievements } = Astro.props;
 ---
 
 <section class="py-20 bg-bs-surface-950 text-white" id="achievements">
   <div class="bs-container">
-    <header class="text-center max-w-3xl mx-auto flex flex-col gap-4 mb-12">
-      <h2 class="bs-h2">Nuestros Logros</h2>
-      <p class="text-bs-neutral-300 text-lg leading-relaxed">
-        AgroTico Smart se ha destacado en competencias y reconocimientos, mostrando el compromiso y la innovación de nuestro equipo.
-      </p>
-    </header>
+    <div class="mb-12">
+      <SectionHeader 
+        title="Nuestros Logros" 
+        subtitle="AgroTico Smart se ha destacado en competencias y reconocimientos, mostrando el compromiso y la innovación de nuestro equipo."
+      />
+    </div>
 
     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
       {achievements.map((item) => (
