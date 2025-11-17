@@ -1,0 +1,29 @@
+---
+/**
+ * Reusable Section Header Component
+ * Provides consistent styling for section titles and descriptions
+ */
+interface Props {
+  title: string;
+  subtitle?: string;
+  centered?: boolean;
+  maxWidth?: string;
+}
+
+const { 
+  title, 
+  subtitle, 
+  centered = true,
+  maxWidth = "3xl"
+} = Astro.props;
+
+const alignmentClass = centered ? "text-center" : "text-center md:text-left";
+const containerClass = centered ? `text-center max-w-${maxWidth} mx-auto` : "";
+---
+
+<header class:list={["flex flex-col gap-4", containerClass]}>
+  <h2 class:list={["bs-h2", alignmentClass]}>{title}</h2>
+  {subtitle && (
+    <p class="text-bs-neutral-200 text-lg leading-relaxed" set:html={subtitle} />
+  )}
+</header>

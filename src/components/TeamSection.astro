@@ -1,4 +1,5 @@
 ---
+import SectionHeader from "./SectionHeader.astro";
 const { title, team } = Astro.props
 ---
 
@@ -8,14 +9,10 @@ const { title, team } = Astro.props
 >
   <!-- Contenido centrado al ancho del FAQ -->
   <div class="bs-container flex flex-col gap-12">
-    <header class="text-center max-w-3xl mx-auto flex flex-col gap-4">
-      <h2 class="bs-h2 text-center">{title}</h2>
-      <p class="text-bs-neutral-200 text-lg leading-relaxed">
-        🌱🤖 Con mucho orgullo presentamos al equipo detrás de AgroTico Smart 🚜💡<br/>
-        Nuestro proyecto nació con un objetivo claro: llevar innovación real al campo costarricense,
-        ayudando a los agricultores a enfrentar el cambio climático con tecnología accesible y práctica.
-      </p>
-    </header>
+    <SectionHeader 
+      title={title}
+      subtitle={"🌱🤖 Con mucho orgullo presentamos al equipo detrás de AgroTico Smart 🚜💡<br/>Nuestro proyecto nació con un objetivo claro: llevar innovación real al campo costarricense, ayudando a los agricultores a enfrentar el cambio climático con tecnología accesible y práctica."}
+    />
 
     <div class="flex flex-wrap justify-center gap-8">
       {team.map((member) => (
