@@ -52,24 +52,50 @@ const API_KEY = import.meta.env.YOUTUBE_API_KEY;
   <!-- Script para actualizar stats en cliente -->
   <script type="module" client:load>
     const section = document.querySelector('section[data-video-id]');
-    const videoId = section.dataset.videoId;
-    const API_KEY = section.dataset.apiKey;
+    const videoId = section?.dataset.videoId;
+    const API_KEY = section?.dataset.apiKey;
 
     async function updateStats() {
+      if (!videoId || !API_KEY) {
+        console.warn('YouTube API: Missing videoId or API key');
+        document.querySelector("#likes-counter span").textContent = "👍 N/A";
+        document.querySelector("#views-counter span").textContent = "👀 N/A";
+        document.querySelector("#comments-counter span").textContent = "💬 N/A";
+        return;
+      }
+
       try {
         const res = await fetch(`https://www.googleapis.com/youtube/v3/videos?part=statistics&id=${videoId}&key=${API_KEY}`);
+        
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+        
         const data = await res.json();
-        const stats = data.items?.[0]?.statistics || {};
+        const stats = data.items?.[0]?.statistics;
 
-        document.querySelector("#likes-counter span").textContent = `👍 ${stats.likeCount ?? "N/A"}`;
-        document.querySelector("#views-counter span").textContent = `👀 ${stats.viewCount ?? "N/A"}`;
-        document.querySelector("#comments-counter span").textContent = `💬 ${stats.commentCount ?? "N/A"}`;
+        if (!stats) {
+          throw new Error('No statistics data available');
+        }
+
+        const formatNumber = (num) => {
+          if (!num) return "N/A";
+          return parseInt(num).toLocaleString('es-CR');
+        };
+
+        document.querySelector("#likes-counter span").textContent = `👍 ${formatNumber(stats.likeCount)}`;
+        document.querySelector("#views-counter span").textContent = `👀 ${formatNumber(stats.viewCount)}`;
+        document.querySelector("#comments-counter span").textContent = `💬 ${formatNumber(stats.commentCount)}`;
       } catch (e) {
         console.error("Error al obtener stats de YouTube:", e);
+        document.querySelector("#likes-counter span").textContent = "👍 Error";
+        document.querySelector("#views-counter span").textContent = "👀 Error";
+        document.querySelector("#comments-counter span").textContent = "💬 Error";
       }
     }
 
     updateStats();
-    setInterval(updateStats, 15000); // actualiza cada 15 segundos
+    // Actualiza cada 30 segundos (más razonable que 15)
+    setInterval(updateStats, 30000);
   </script>
 </section>
