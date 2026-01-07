@@ -51,25 +51,38 @@
 <script>
   // Language selector and translation functionality
   let translations = {
-    es: null,
-    en: null
+    es: {},
+    en: {}
   };
   
   // Load translations
   async function loadTranslations() {
     try {
       const [esData, enData] = await Promise.all([
-        fetch('/locales/es/translation.json').then(r => r.json()),
-        fetch('/locales/en/translation.json').then(r => r.json())
+        fetch('/locales/es/translation.json').then(r => {
+          if (!r.ok) throw new Error(`Failed to load Spanish translations: ${r.status}`);
+          return r.json();
+        }),
+        fetch('/locales/en/translation.json').then(r => {
+          if (!r.ok) throw new Error(`Failed to load English translations: ${r.status}`);
+          return r.json();
+        })
       ]);
       translations.es = esData;
       translations.en = enData;
     } catch (e) {
       console.error('Failed to load translations:', e);
+      // Fallback: continue with empty translations
     }
   }
   
   function getTranslation(key: string, lang: string) {
+    // Validate language exists
+    if (!translations[lang] || Object.keys(translations[lang]).length === 0) {
+      console.warn(`Translations for language '${lang}' not available`);
+      return key;
+    }
+    
     const keys = key.split('.');
     let value: any = translations[lang];
     
@@ -199,13 +212,6 @@
       if (applyNow) {
         applyTranslations(lang);
       }
-    }
-    
-    // Restore scroll position after language change
-    const savedScroll = sessionStorage.getItem('scrollPosition');
-    if (savedScroll) {
-      window.scrollTo(0, parseInt(savedScroll));
-      sessionStorage.removeItem('scrollPosition');
     }
   }
   
