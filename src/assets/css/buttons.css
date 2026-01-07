@@ -10,7 +10,9 @@
     duration-200
     focus-visible:outline-none
     focus-visible:ring-2
-    focus-visible:ring-white/75
+    focus-visible:ring-[#4caf50]
+    focus-visible:ring-offset-2
+    focus-visible:ring-offset-bs-surface-1
     font-semibold
     px-5
     py-4
@@ -32,6 +34,20 @@
     before:ease-out
     hover:before:translate-x-0
     hover:before:opacity-10
+    hover:scale-[1.02]
     active:before:opacity-0
+    active:scale-[0.98]
+    ;
+}
+
+.bs-btn-primary {
+  @apply
+    bg-[#4caf50]
+    hover:bg-[#45a049]
+    text-white
+    shadow-lg
+    shadow-[#4caf50]/20
+    hover:shadow-xl
+    hover:shadow-[#4caf50]/30
     ;
 }

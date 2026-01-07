@@ -4,17 +4,24 @@
 .bs-h1 {
   @apply font-display font-medium text-balance text-5xl md:text-6xl;
   color: #4caf50;
+  text-shadow: 0 2px 10px rgba(76, 175, 80, 0.3);
 }
 
 .bs-h2 {
   @apply font-display font-medium text-balance text-3xl md:text-4xl;
   color: #4caf50;
+  text-shadow: 0 2px 8px rgba(76, 175, 80, 0.2);
 }
 
 .bs-h3 {
   @apply font-display font-medium text-balance text-lg md:text-2xl;
+  color: #ffffff;
 }
 
 .bs-body-text {
-  @apply leading-relaxed;
+  @apply leading-relaxed text-bs-foreground-light/90;
+}
+
+.bs-body-text strong {
+  @apply text-bs-foreground-light font-semibold;
 }
