@@ -20,13 +20,14 @@ const { settings, title, content } = Astro.props
 
     <!-- CTA Buttons -->
     <div class="flex flex-col sm:flex-row gap-4 mt-4">
-      <button 
-        type="button"
-        class="bs-btn bs-btn-primary"
-        onclick="window.location.href='https://agrotico-smart-dashboard.vercel.app/'"
+      <a 
+        href="https://agrotico-smart-dashboard.vercel.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="bs-btn bs-btn-primary text-center"
       >
         🚀 Ver Dashboard
-      </button>
+      </a>
       <button
         type="button"
         class="bs-btn"

@@ -80,7 +80,11 @@ const API_KEY = import.meta.env.YOUTUBE_API_KEY;
 
         const formatNumber = (num) => {
           if (!num) return "N/A";
-          return parseInt(num).toLocaleString('es-CR');
+          try {
+            return parseInt(num).toLocaleString('es');
+          } catch (e) {
+            return parseInt(num).toLocaleString();
+          }
         };
 
         document.querySelector("#likes-counter span").textContent = `👍 ${formatNumber(stats.likeCount)}`;
