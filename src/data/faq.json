@@ -26,5 +26,25 @@
   {
     "question": "¿AgroTico Smart es adecuado para todos los cultivos?",
     "answer": "Inicialmente se enfoca en hortalizas de alto valor (lechuga, tomate, chiles) y cultivos comunes en las regiones Chorotega y Huetar Norte. El sistema puede adaptarse a otros cultivos a medida que se recopila información y se ajustan los modelos predictivos."
+  },
+  {
+    "question": "¿Cómo instalo el sistema en mi finca?",
+    "answer": "La instalación es sencilla y viene con capacitación incluida. Nuestro equipo técnico te guiará paso a paso: ubicación óptima de sensores, conexión del sistema, configuración inicial y primeras lecturas. El proceso toma aproximadamente 2-3 horas."
+  },
+  {
+    "question": "¿Necesito conocimientos técnicos avanzados para usarlo?",
+    "answer": "No. AgroTico Smart está diseñado para ser intuitivo y fácil de usar. El dashboard muestra información clara con alertas visuales y recomendaciones en lenguaje sencillo. Además, la capacitación incluida te preparará para usar todas las funciones."
+  },
+  {
+    "question": "¿Qué tipo de garantía ofrece el producto?",
+    "answer": "Ofrecemos garantía de un año en componentes electrónicos y tres años de soporte técnico. Si algún sensor falla, lo reemplazamos sin costo durante el período de garantía. También brindamos actualizaciones de software gratuitas."
+  },
+  {
+    "question": "¿Puedo expandir el sistema en el futuro?",
+    "answer": "¡Absolutamente! El sistema es modular y escalable. Puedes agregar más sensores, expandir la cobertura a más áreas de tu finca o integrar nuevas funcionalidades a medida que tu operación crece."
+  },
+  {
+    "question": "¿El proyecto es realmente de código abierto?",
+    "answer": "Sí, completamente. Todo nuestro código, diseños 3D y documentación están disponibles en GitHub bajo licencias abiertas. Creemos en la transparencia y en que la tecnología debe ser accesible para todos."
   }
 ]

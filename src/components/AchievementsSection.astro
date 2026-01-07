@@ -7,19 +7,20 @@ const { achievements } = Astro.props;
   <div class="bs-container">
     <div class="mb-12">
       <SectionHeader 
-        title="Nuestros Logros" 
-        subtitle="AgroTico Smart se ha destacado en competencias y reconocimientos, mostrando el compromiso y la innovación de nuestro equipo."
+        title="Nuestros Logros 🏆" 
+        subtitle="AgroTico Smart se ha destacado en competencias y reconocimientos nacionales e internacionales, mostrando el compromiso, la innovación y el talento de nuestro equipo de estudiantes costarricenses."
       />
     </div>
 
     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-      {achievements.map((item) => (
-        <div class="group flex flex-col items-center gap-4 p-6 bg-bs-surface-0/50 rounded-xl border border-white/10 shadow-lg hover:scale-105 transition-transform duration-500">
-          <div class="w-16 h-16 flex items-center justify-center rounded-full bg-gradient-to-r from-green-400 to-blue-500 text-white text-2xl font-bold">
-            🏆
+      {achievements.map((item, index) => (
+        <div class="group flex flex-col items-center gap-4 p-8 bg-gradient-to-br from-bs-surface-0/70 to-bs-surface-0/50 rounded-xl border border-white/10 shadow-lg hover:scale-105 hover:shadow-2xl hover:shadow-[#4caf50]/20 hover:border-[#4caf50]/30 transition-all duration-500">
+          <div class="w-20 h-20 flex items-center justify-center rounded-full bg-gradient-to-br from-[#4caf50] to-[#45a049] text-white text-3xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300">
+            {index === 0 ? '🥇' : index === 1 ? '🏆' : '⭐'}
           </div>
-          <h3 class="font-display text-xl font-semibold text-center">{item.title}</h3>
-          {item.year && <p class="text-sm text-bs-neutral-300">{item.year}</p>}
+          <h3 class="font-display text-xl font-semibold text-center group-hover:text-[#4caf50] transition-colors">{item.title}</h3>
+          {item.year && <p class="text-sm text-bs-neutral-300 font-semibold uppercase tracking-wider">{item.year}</p>}
+          {item.description && <p class="text-sm text-bs-neutral-400 text-center leading-relaxed">{item.description}</p>}
         </div>
       ))}
     </div>

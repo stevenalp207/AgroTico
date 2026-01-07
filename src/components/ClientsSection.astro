@@ -5,19 +5,30 @@ const { title, clients } = Astro.props
 <section class="anim-wrapper bs-container bs-mt-lg grid">
 
   <!-- Title -->
-  { title && <h2 class="bs-h2 text-center" set:html={ title } />}
+  { title && <h2 class="bs-h2 text-center mb-4" set:html={ title } />}
+  
+  <!-- Subtitle -->
+  <p class="text-center text-bs-foreground-dark text-lg mb-8 max-w-3xl mx-auto">
+    Instituciones y organizaciones que confían en nuestro proyecto y nos impulsan a seguir innovando
+  </p>
 
   <!-- Logos -->
-  <div class="bs-mt-md grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 place-content-center gap-4">
+  <div class="bs-mt-md grid grid-cols-1 md:grid-cols-2 place-content-center gap-6">
 
     {
       clients.map(item =>
 
-        <a class="group py-10 px-5 rounded-xl flex place-content-center bg-bs-surface-2/70 hover:bg-bs-surface-2 transition-colors duration-300" href={item.link}>
+        <a 
+          class="group py-10 px-8 rounded-xl flex place-content-center bg-bs-surface-2/70 hover:bg-bs-surface-2 border border-bs-surface-3 hover:border-[#4caf50]/30 hover:shadow-xl hover:shadow-[#4caf50]/10 transition-all duration-300" 
+          href={item.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Visitar sitio web de ${item.title}`}
+        >
 
           <img
             src={item.image}
-            alt={item.title}
+            alt={`Logo de ${item.title}`}
             class={`opacity-60 group-hover:scale-[1.05] group-hover:-translate-y-1 group-hover:opacity-100 group-hover:-rotate-1 ease-bs-bounce transition-all duration-1000
               ${item.title === "CEDES Don Bosco" ? "!w-[280px] h-auto" : "!w-[250px] h-auto"}`}
             loading="lazy"

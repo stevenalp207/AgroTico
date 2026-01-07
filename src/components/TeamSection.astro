@@ -17,19 +17,22 @@ const { title, team } = Astro.props
     <div class="flex flex-wrap justify-center gap-8">
       {team.map((member) => (
         <article
-          class="w-full sm:w-[45%] lg:w-[30%] bg-bs-surface-0/50 backdrop-blur-xl border border-white/10 rounded-xl overflow-hidden hover:scale-[1.02] transition-transform duration-500"
+          class="group w-full sm:w-[45%] lg:w-[30%] bg-bs-surface-0/50 backdrop-blur-xl border border-white/10 rounded-xl overflow-hidden hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#4caf50]/10 transition-all duration-500"
         >
-          <img
-            src={member.image}
-            alt={member.name}
-            class="h-64 w-full object-cover group-hover:scale-105 transition-transform duration-700"
-          />
+          <div class="overflow-hidden">
+            <img
+              src={member.image}
+              alt={`Foto de ${member.name} - ${member.role}`}
+              class="h-64 w-full object-cover group-hover:scale-105 transition-transform duration-700"
+              loading="lazy"
+            />
+          </div>
           <div class="p-6 flex flex-col gap-2 text-center">
-            <h3 class="font-display text-2xl font-medium">{member.name}</h3>
-            <p class="uppercase text-sm tracking-widest text-bs-primary-400 font-semibold">
+            <h3 class="font-display text-2xl font-medium text-bs-foreground-light">{member.name}</h3>
+            <p class="uppercase text-sm tracking-widest text-[#4caf50] font-semibold">
               {member.role}
             </p>
-            <p class="text-sm text-bs-neutral-300 leading-relaxed" set:html={member.bio} />
+            <p class="text-sm text-bs-neutral-300 leading-relaxed mt-2" set:html={member.bio} />
           </div>
         </article>
       ))}
