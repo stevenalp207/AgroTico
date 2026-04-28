@@ -32,6 +32,7 @@ const { title, clients } = Astro.props
             class={`opacity-60 group-hover:scale-[1.05] group-hover:-translate-y-1 group-hover:opacity-100 group-hover:-rotate-1 ease-bs-bounce transition-all duration-1000
               ${item.title === "CEDES Don Bosco" ? "!w-[280px] h-auto" : "!w-[250px] h-auto"}`}
             loading="lazy"
+            decoding="async"
             width={item.width}
             height={item.height}
           />

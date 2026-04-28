@@ -42,7 +42,15 @@ const { settings, title, content } = Astro.props
   <!-- Image -->
   <figure class="flex place-content-center -mt-20 lg:mt-0">
 
-    <Image src={ hero_screens } format="avif" quality="high" alt="Screens showing phone, tablet and desktop views of our website" loading="eager" />
+    <Image
+      src={ hero_screens }
+      format="avif"
+      quality="high"
+      alt="Screens showing phone, tablet and desktop views of our website"
+      loading="lazy"
+      decoding="async"
+      sizes="(min-width:1280px) 50vw, 100vw"
+    />
 
   </figure>
 

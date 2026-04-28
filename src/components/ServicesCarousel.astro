@@ -48,7 +48,7 @@ const { title, services } = Astro.props
         <figure class="flex flex-col gap-6 isolate min-h-[50svh] md:min-h-[40rem] h-full">
 
           {/* BG image */}
-          <img src={ item.image } alt={ item.image_alt } loading="lazy"
+          <img src={ item.image } alt={ item.image_alt } loading="lazy" decoding="async"
             class="opacity-20 md:opacity-80 rounded-xl grayscale overflow-hidden w-full h-full object-cover object-left absolute inset-0"
             height="1024" width="768" />
 
@@ -125,6 +125,46 @@ next_btn.addEventListener('click', () => swiper.slideNext())
 // Trigger swiper
 swiper.init?.()
 
+</script>
+
+<script type="module" client:idle>
+import Swiper, { Lazy } from "swiper"
+import 'swiper/css'
+import 'swiper/css/lazy'
+
+document.addEventListener('DOMContentLoaded', () => {
+  const swiperEl = document.querySelector('.js-fc-swiper')
+  if (!swiperEl) return
+
+  const prev_btn = document.querySelector('.js-fc-btn-prev')
+  const next_btn = document.querySelector('.js-fc-btn-next')
+
+  const swiper = new Swiper('.js-fc-swiper', {
+    slidesPerView: 1.05,
+    spaceBetween: 8,
+    speed: 500,
+    loop: true,
+    centeredSlides: true,
+    preloadImages: false,
+    lazy: {
+      loadPrevNext: true,
+      loadPrevNextAmount: 1,
+    },
+    observer: true,
+    observeParents: true,
+    modules: [Lazy],
+    breakpoints: {
+      640: { slidesPerView: 1.2, spaceBetween: 32 },
+      1600: { slidesPerView: 1.4, spaceBetween: 64 },
+      1900: { slidesPerView: 1.6, spaceBetween: 64 },
+    },
+  })
+
+  if (prev_btn) prev_btn.addEventListener('click', () => swiper.slidePrev())
+  if (next_btn) next_btn.addEventListener('click', () => swiper.slideNext())
+
+  swiper.init?.()
+})
 </script>
 
 <style>
