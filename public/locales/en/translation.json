@@ -1,0 +1,56 @@
+{
+  "site": {
+    "title": "AgroTico Smart",
+    "description": "Costa Rican innovation transforming the countryside",
+    "skipToContent": "Skip to main content"
+  },
+  "nav": {
+    "services": "Services",
+    "caseStudies": "Success Stories",
+    "pricing": "Pricing",
+    "faq": "FAQ",
+    "contact": "Contact"
+  },
+  "header": {
+    "dashboard": "Dashboard"
+  },
+  "hero": {
+    "title": "AgroTico Smart",
+    "content": "<p><strong>Costa Rican innovation transforming the countryside</strong>. We are a <strong>precision agriculture</strong> platform created by students from Don Bosco Technical Professional College, to address the challenges faced by Costa Rican farmers.</p><p>We unite <strong>education, technology and social impact</strong> to build a more sustainable future. 🌱🇨🇷</p>"
+  },
+  "sections": {
+    "services": "What We Offer",
+    "clients": "Backed By",
+    "testimonials": "What They Say About Us",
+    "caseStudies": "Our Impact",
+    "pricing": "Value We Generate",
+    "faq": "Frequently Asked Questions",
+    "team": "Meet the Team"
+  },
+  "quote": {
+    "content": "AgroTico Smart is an <strong>innovative solution</strong> that brings <strong>technology to the field</strong>. With its focus on <strong>precision agriculture</strong>, it represents the <strong>talent and vision</strong> of Costa Rican youth to transform the way we produce food.",
+    "cite": "Finalists Solve For Tomorrow 2025",
+    "role": "Samsung Latin America"
+  },
+  "footer": {
+    "innovation": "Costa Rican Innovation 🇨🇷",
+    "transforming": "Transforming the countryside with technology",
+    "navigation": "Navigation",
+    "resources": "Resources",
+    "contact": "Contact",
+    "dashboard": "Dashboard",
+    "copyright": "AgroTico Smart",
+    "school": "Don Bosco Technical Professional College",
+    "achievement": "Finalists Solve For Tomorrow 2025 🏆"
+  },
+  "demo": {
+    "title": "Dashboard",
+    "content": "<strong>Explore our data dashboard</strong> and discover how AgroTico Smart can help you make precise decisions for your farm, optimizing resources and increasing productivity."
+  },
+  "language": {
+    "selector": "Language selector",
+    "current": "Current language: {{lang}}",
+    "spanish": "Spanish",
+    "english": "English"
+  }
+}

@@ -1,0 +1,240 @@
+---
+// Language Selector Component
+---
+
+<div class="language-selector relative">
+  <button
+    id="language-toggle"
+    class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-bs-surface-2 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4caf50] focus-visible:ring-offset-2"
+    aria-label="Selector de idioma / Language selector"
+    aria-haspopup="true"
+    aria-expanded="false"
+    type="button"
+  >
+    <!-- Globe SVG icon -->
+    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"></circle>
+      <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+      <path d="M2 12h20"></path>
+    </svg>
+    <span class="hidden sm:inline font-semibold" id="current-lang">ES</span>
+  </button>
+
+  <div
+    id="language-menu"
+    class="absolute right-0 mt-2 w-40 bg-white dark:bg-bs-surface-2 rounded-lg shadow-lg border border-bs-neutral-200 dark:border-bs-neutral-700 hidden z-50"
+    role="menu"
+    aria-orientation="vertical"
+    aria-labelledby="language-toggle"
+  >
+    <button
+      class="lang-option w-full text-left px-4 py-2 hover:bg-bs-surface-1 transition-colors duration-150 rounded-t-lg flex items-center justify-between font-semibold"
+      data-lang="es"
+      role="menuitem"
+      tabindex="0"
+    >
+      <span>🇪🇸 Español</span>
+      <span class="lang-check hidden text-[#4caf50]">✓</span>
+    </button>
+    <button
+      class="lang-option w-full text-left px-4 py-2 hover:bg-bs-surface-1 transition-colors duration-150 rounded-b-lg flex items-center justify-between font-semibold"
+      data-lang="en"
+      role="menuitem"
+      tabindex="-1"
+    >
+      <span>🇬🇧 English</span>
+      <span class="lang-check hidden text-[#4caf50]">✓</span>
+    </button>
+  </div>
+</div>
+
+<script>
+  // Language selector and translation functionality
+  let translations = {
+    es: {},
+    en: {}
+  };
+  
+  // Load translations
+  async function loadTranslations() {
+    try {
+      const [esData, enData] = await Promise.all([
+        fetch('/locales/es/translation.json').then(r => {
+          if (!r.ok) throw new Error(`Failed to load Spanish translations: ${r.status}`);
+          return r.json();
+        }),
+        fetch('/locales/en/translation.json').then(r => {
+          if (!r.ok) throw new Error(`Failed to load English translations: ${r.status}`);
+          return r.json();
+        })
+      ]);
+      translations.es = esData;
+      translations.en = enData;
+    } catch (e) {
+      console.error('Failed to load translations:', e);
+      // Fallback: continue with empty translations
+    }
+  }
+  
+  function getTranslation(key: string, lang: string) {
+    // Validate language exists
+    if (!translations[lang] || Object.keys(translations[lang]).length === 0) {
+      console.warn(`Translations for language '${lang}' not available`);
+      return key;
+    }
+    
+    const keys = key.split('.');
+    let value: any = translations[lang];
+    
+    for (const k of keys) {
+      value = value?.[k];
+    }
+    
+    return value ?? key;
+  }
+  
+  function applyTranslations(lang: string) {
+    // Update all elements with data-i18n attribute
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (key) {
+        const translation = getTranslation(key, lang);
+        if (translation && translation !== key) {
+          if (el.hasAttribute('data-i18n-html')) {
+            (el as HTMLElement).innerHTML = translation;
+          } else {
+            (el as HTMLElement).textContent = translation;
+          }
+        }
+      }
+    });
+    
+    // Update title
+    const titleKey = document.querySelector('[data-i18n-title]')?.getAttribute('data-i18n-title');
+    if (titleKey) {
+      document.title = getTranslation(titleKey, lang);
+    }
+    
+    // Update meta description
+    const descMeta = document.querySelector('meta[name="description"]') as HTMLMetaElement;
+    if (descMeta) {
+      const descKey = 'site.description';
+      descMeta.content = getTranslation(descKey, lang);
+    }
+    
+    // Update language attribute
+    const langMeta = document.querySelector('meta[name="language"]') as HTMLMetaElement;
+    if (langMeta) {
+      langMeta.content = lang === 'es' ? 'Spanish' : 'English';
+    }
+  }
+  
+  async function initLanguageSelector() {
+    // Load translations first
+    await loadTranslations();
+    
+    const toggle = document.getElementById('language-toggle');
+    const menu = document.getElementById('language-menu');
+    const currentLangEl = document.getElementById('current-lang');
+    const langOptions = document.querySelectorAll('.lang-option');
+    
+    // Get stored language or default to 'es'
+    const storedLang = localStorage.getItem('language') || 'es';
+    
+    // Set initial language
+    setLanguage(storedLang, false);
+    
+    // Toggle menu
+    toggle?.addEventListener('click', () => {
+      const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!isExpanded));
+      menu?.classList.toggle('hidden');
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!toggle?.contains(e.target as Node) && !menu?.contains(e.target as Node)) {
+        toggle?.setAttribute('aria-expanded', 'false');
+        menu?.classList.add('hidden');
+      }
+    });
+    
+    // Language option selection
+    langOptions.forEach(option => {
+      option.addEventListener('click', () => {
+        const lang = option.getAttribute('data-lang');
+        if (lang) {
+          setLanguage(lang, true);
+          menu?.classList.add('hidden');
+          toggle?.setAttribute('aria-expanded', 'false');
+        }
+      });
+      
+      // Keyboard navigation
+      option.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          const lang = option.getAttribute('data-lang');
+          if (lang) {
+            setLanguage(lang, true);
+            menu?.classList.add('hidden');
+            toggle?.setAttribute('aria-expanded', 'false');
+          }
+        }
+      });
+    });
+    
+    function setLanguage(lang: string, applyNow: boolean) {
+      // Store in localStorage
+      localStorage.setItem('language', lang);
+      
+      // Update current language display
+      if (currentLangEl) {
+        currentLangEl.textContent = lang.toUpperCase();
+      }
+      
+      // Update document lang attribute
+      document.documentElement.lang = lang;
+      
+      // Update checkmarks
+      langOptions.forEach(opt => {
+        const check = opt.querySelector('.lang-check');
+        if (opt.getAttribute('data-lang') === lang) {
+          check?.classList.remove('hidden');
+          opt.setAttribute('aria-checked', 'true');
+        } else {
+          check?.classList.add('hidden');
+          opt.setAttribute('aria-checked', 'false');
+        }
+      });
+      
+      // Apply translations
+      if (applyNow) {
+        applyTranslations(lang);
+      }
+    }
+  }
+  
+  // Initialize on page load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLanguageSelector);
+  } else {
+    initLanguageSelector();
+  }
+</script>
+
+<style>
+  .language-selector {
+    position: relative;
+  }
+  
+  #language-menu {
+    min-width: 160px;
+  }
+  
+  @media (max-width: 640px) {
+    #language-menu {
+      right: -1rem;
+    }
+  }
+</style>

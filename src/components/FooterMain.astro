@@ -26,8 +26,8 @@ const { settings } = Astro.props
       <!-- Info -->
       <div class="flex flex-col gap-3 text-sm text-bs-foreground-dark mt-4">
         <p class="text-base text-bs-foreground-light font-normal">
-          Innovación costarricense 🇨🇷<br/>
-          Transformando el campo con tecnología
+          <span data-i18n="footer.innovation">Innovación costarricense 🇨🇷</span><br/>
+          <span data-i18n="footer.transforming">Transformando el campo con tecnología</span>
         </p>
         <p>
           📧 <a href="mailto:agroticosmart@gmail.com" class="hover:underline">agroticosmart@gmail.com</a>
@@ -45,17 +45,18 @@ const { settings } = Astro.props
     <div class="flex gap-10 md:gap-2 lg:gap-20 md:justify-end [&_a]:block md:[&_a]:px-5 [&_a]:py-2">
       <!-- Nav -->
       <nav class="flex flex-col">
-        <h3 class="text-bs-foreground-light font-bold mb-3">Navegación</h3>
-        {settings.nav.map((item) => (
-          <a href={item.link}>{item.title}</a>
-        ))}
-        <a href="#contact">Contacto</a>
+        <h3 class="text-bs-foreground-light font-bold mb-3" data-i18n="footer.navigation">Navegación</h3>
+        <a href="/#servicios" data-i18n="nav.services">Servicios</a>
+        <a href="/#casos-de-exito" data-i18n="nav.caseStudies">Casos de éxito</a>
+        <a href="/#precios" data-i18n="nav.pricing">Precios</a>
+        <a href="/#faq" data-i18n="nav.faq">Preguntas frecuentes</a>
+        <a href="#contact" data-i18n="footer.contact">Contacto</a>
       </nav>
 
       <!-- Quick Links -->
       <nav class="flex flex-col">
-        <h3 class="text-bs-foreground-light font-bold mb-3">Recursos</h3>
-        <a href="https://agrotico-smart-dashboard.vercel.app/" target="_blank" rel="noopener noreferrer">Dashboard</a>
+        <h3 class="text-bs-foreground-light font-bold mb-3" data-i18n="footer.resources">Recursos</h3>
+        <a href="https://agrotico-smart-dashboard.vercel.app/" target="_blank" rel="noopener noreferrer" data-i18n="footer.dashboard">Dashboard</a>
         <a href="https://github.com/agrotico-smart" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="https://www.instagram.com/agroticosmart/" target="_blank" rel="noopener noreferrer">Instagram</a>
       </nav>
@@ -65,11 +66,11 @@ const { settings } = Astro.props
   <!-- Colophon -->
   <aside class="bs-container">
     <nav class="flex flex-col sm:flex-row gap-4 justify-center items-center pt-16 md:pt-24 text-xs text-bs-neutral-400">
-      <a href="https://agroticosmart.vercel.app/">© {new Date().getFullYear()} AgroTico Smart</a>
+      <a href="https://agroticosmart.vercel.app/">© {new Date().getFullYear()} <span data-i18n="footer.copyright">AgroTico Smart</span></a>
       <span class="hidden sm:inline">•</span>
-      <span>Colegio Técnico Profesional Don Bosco</span>
+      <span data-i18n="footer.school">Colegio Técnico Profesional Don Bosco</span>
       <span class="hidden sm:inline">•</span>
-      <span class="text-[#4caf50]">Finalistas Solve For Tomorrow 2025 🏆</span>
+      <span class="text-[#4caf50]" data-i18n="footer.achievement">Finalistas Solve For Tomorrow 2025 🏆</span>
     </nav>
   </aside>
 </footer>

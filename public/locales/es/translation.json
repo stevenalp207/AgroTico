@@ -1,0 +1,56 @@
+{
+  "site": {
+    "title": "AgroTico Smart",
+    "description": "Innovación costarricense que transforma el campo",
+    "skipToContent": "Saltar al contenido principal"
+  },
+  "nav": {
+    "services": "Servicios",
+    "caseStudies": "Casos de éxito",
+    "pricing": "Precios",
+    "faq": "Preguntas frecuentes",
+    "contact": "Contacto"
+  },
+  "header": {
+    "dashboard": "Dashboard"
+  },
+  "hero": {
+    "title": "AgroTico Smart",
+    "content": "<p><strong>Innovación costarricense que transforma el campo</strong>. Somos una plataforma de <strong>agricultura de precisión</strong> creada por estudiantes del Colegio Técnico Profesional Don Bosco, para enfrentar los desafíos de los agricultores costarricenses.</p><p>Unimos <strong>educación, tecnología e impacto social</strong> para construir un futuro más sostenible. 🌱🇨🇷</p>"
+  },
+  "sections": {
+    "services": "Lo que ofrecemos",
+    "clients": "Respaldados por",
+    "testimonials": "Lo que dicen de nosotros",
+    "caseStudies": "Nuestro impacto",
+    "pricing": "Valor que generamos",
+    "faq": "Preguntas frecuentes",
+    "team": "Conoce al Equipo"
+  },
+  "quote": {
+    "content": "AgroTico Smart es una <strong>solución innovadora</strong> que acerca la <strong>tecnología al campo</strong>. Con su enfoque en la <strong>agricultura de precisión</strong>, representa el <strong>talento y visión</strong> de la juventud costarricense para transformar la forma en que producimos alimentos.",
+    "cite": "Finalistas Solve For Tomorrow 2025",
+    "role": "Samsung Latin America"
+  },
+  "footer": {
+    "innovation": "Innovación costarricense 🇨🇷",
+    "transforming": "Transformando el campo con tecnología",
+    "navigation": "Navegación",
+    "resources": "Recursos",
+    "contact": "Contacto",
+    "dashboard": "Dashboard",
+    "copyright": "AgroTico Smart",
+    "school": "Colegio Técnico Profesional Don Bosco",
+    "achievement": "Finalistas Solve For Tomorrow 2025 🏆"
+  },
+  "demo": {
+    "title": "Dashboard",
+    "content": "<strong>Explora nuestro panel de datos</strong> y descubre cómo AgroTico Smart puede ayudarte a tomar decisiones precisas para tu finca, optimizando recursos y aumentando productividad."
+  },
+  "language": {
+    "selector": "Selector de idioma",
+    "current": "Idioma actual: {{lang}}",
+    "spanish": "Español",
+    "english": "Inglés"
+  }
+}
