@@ -4,14 +4,10 @@ import SocialLinks from "./SocialLinks.astro"
 const { settings } = Astro.props
 ---
 
-<footer
-  class="@container bs-container my-24 font-semibold text-bs-foreground-dark [&_a]:hover:text-bs-foreground-light [&_a]:transition-colors [&_a]:duration-150"
-  id="contact"
->
+<footer id="contact" class="bs-container my-24 text-bs-foreground-dark">
+
   <!-- Wrapper -->
-  <div
-    class="bg-bs-surface-2 p-6 md:p-16 rounded-xl grid md:grid-cols-2 gap-8 items-center"
-  >
+  <div class="bg-gradient-to-b from-transparent/20 to-black/10 p-6 md:p-16 rounded-xl grid md:grid-cols-2 gap-8 items-center shadow-inner border border-transparent/6">
     <!-- Left col -->
     <div class="w-max flex flex-col gap-8 md:gap-0 justify-between text-bs-foreground-light">
       <!-- Logo -->
@@ -62,14 +58,16 @@ const { settings } = Astro.props
     </div>
   </div>
 
+  </div>
+
   <!-- Colophon -->
-  <aside class="bs-container">
-    <nav class="flex flex-col sm:flex-row gap-4 justify-center items-center pt-16 md:pt-24 text-xs text-bs-neutral-400">
+  <aside class="bs-container mt-8">
+    <nav class="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8 text-xs text-bs-neutral-400">
       <a href="https://agroticosmart.vercel.app/">© {new Date().getFullYear()} AgroTico Smart</a>
       <span class="hidden sm:inline">•</span>
       <span>Colegio Técnico Profesional Don Bosco</span>
       <span class="hidden sm:inline">•</span>
-      <span class="text-[#4caf50]">Finalistas Solve For Tomorrow 2025 🏆</span>
+      <span class="text-[#4caf50]">Finalistas Solve For Tomorrow 2025</span>
     </nav>
   </aside>
 </footer>

@@ -2,15 +2,15 @@
 @reference "./global.css";
 
 .bs-h1 {
-  @apply font-display font-medium text-balance text-5xl md:text-6xl;
-  color: #4caf50;
-  text-shadow: 0 2px 10px rgba(76, 175, 80, 0.3);
+  @apply font-display font-semibold text-balance text-5xl md:text-6xl leading-tight;
+  color: var(--color-bs-foreground-light);
+  text-shadow: 0 6px 30px rgba(0,0,0,0.6);
 }
 
 .bs-h2 {
   @apply font-display font-medium text-balance text-3xl md:text-4xl;
-  color: #4caf50;
-  text-shadow: 0 2px 8px rgba(76, 175, 80, 0.2);
+  color: var(--color-bs-foreground-light);
+  text-shadow: 0 4px 18px rgba(0,0,0,0.5);
 }
 
 .bs-h3 {

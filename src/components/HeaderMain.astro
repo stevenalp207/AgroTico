@@ -6,42 +6,32 @@ const { settings } = Astro.props
 
 ---
 
-<header class="wrapper bg-loop font-semibold">
+<header class="fixed top-4 left-0 right-0 z-50 pointer-events-auto">
 
-  <!-- Wrapper -->
-  <div class="bs-container py-6 flex justify-between items-center">
+  <div class="bs-container">
+    <div class="bg-bs-surface-2/60 backdrop-blur-sm rounded-xl py-4 px-6 flex justify-between items-center shadow-md">
 
-    <!-- Logo -->
-    <a class="flex xl:min-w-32 group" href="/" aria-label={ settings.title + ' - Home' }>
+      <!-- Logo -->
+      <a class="flex xl:min-w-32 items-center gap-3 group" href="/" aria-label={ settings.title + ' - Home' }>
 
-      <Logo class="relative -mt-6 group-hover:scale-[1.05] group-hover:-rotate-1 group-hover:scale-80 transition-transform ease-bs-spring duration-1000" height="100" width="100" />
+        <span class="hidden md:inline text-sm font-semibold text-bs-foreground-light">{ settings.title }</span>
 
-    </a>
+      </a>
 
-    <!-- Nav -->
-    <nav class="hidden col-span-6 md:flex mx-auto self-stretch lg:gap-2">
+      <!-- Nav -->
+      <nav class="hidden md:flex mx-auto items-center gap-4">
+        { settings.nav.map( item => (
+          <a href={item.link} class="text-sm text-bs-foreground-dark hover:text-bs-foreground-light px-3 py-2 rounded-md transition-colors">{item.title}</a>
+        )) }
+      </nav>
 
-      <!-- Links -->
-      { settings.nav.map( item =>
+      <!-- CTA -->
+      <div class="flex items-center gap-3">
+        <a href="https://agrotico-smart-dashboard.vercel.app/" target="_blank" rel="noopener noreferrer" class="bs-btn bs-btn-primary">{ settings.demo.title }</a>
+        <button class="bs-btn" aria-label="Open menu" onclick="document.getElementById('contactDialog')?.showModal()">Contact</button>
+      </div>
 
-        <a class="bs-btn !bg-transparent before:translate-y-full hover:before:translate-y-0" href={item.link}>
-          { item.title }
-        </a>
-
-      )}
-
-    </nav>
-
-    <!-- CTA -->
-    <a 
-      href="https://agrotico-smart-dashboard.vercel.app/"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="min-w-32 bs-btn bs-btn-primary text-center"
-    >
-      { settings.demo.title }
-    </a>
-
+    </div>
   </div>
 
 </header>
