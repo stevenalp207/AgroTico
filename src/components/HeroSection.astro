@@ -13,10 +13,10 @@ const { settings, title, content } = Astro.props
   <div class="flex flex-col gap-6 lg:max-w-lg w-full py-16">
 
     <!-- Title -->
-    <h1 class="bs-h1" set:html={ title } />
+    <h1 class="bs-h1" set:html={ title } data-i18n="hero.title" />
 
     <!-- Content -->
-    <div class="bs-body-text xl:text-xl flex flex-col gap-4 [&_p]:last:text-bs-foreground-dark" set:html={ content } />
+    <div class="bs-body-text xl:text-xl flex flex-col gap-4 [&_p]:last:text-bs-foreground-dark" set:html={ content } data-i18n="hero.content" data-i18n-html />
 
     <!-- CTA Buttons -->
     <div class="flex flex-col sm:flex-row gap-4 mt-4">
@@ -25,6 +25,7 @@ const { settings, title, content } = Astro.props
         target="_blank"
         rel="noopener noreferrer"
         class="bs-btn bs-btn-primary text-center"
+        data-i18n="hero.ctaDashboard"
       >
         🚀 Ver Dashboard
       </a>
@@ -32,6 +33,7 @@ const { settings, title, content } = Astro.props
         type="button"
         class="bs-btn"
         onclick="document.getElementById('contactDialog').showModal()"
+        data-i18n="hero.ctaContact"
       >
         📞 Contáctanos
       </button>

@@ -9,10 +9,10 @@ const { title, faq } = Astro.props
 <section class="bs-container bs-mt-lg grid" id="faq">
 
   <!-- Title -->
-  { title && <h2 class="bs-h2 text-center md:text-left mb-4" set:html={ title } />}
+  { title && <h2 class="bs-h2 text-center md:text-left mb-4" set:html={ title } data-i18n="sections.faq" />}
   
   <!-- Subtitle -->
-  <p class="text-center md:text-left text-bs-foreground-dark text-lg mb-8 max-w-3xl">
+  <p class="text-center md:text-left text-bs-foreground-dark text-lg mb-8 max-w-3xl" data-i18n="sectionSubtitles.faq">
     ¿Tienes dudas? Aquí encontrarás respuestas a las preguntas más frecuentes sobre AgroTico Smart
   </p>
 
@@ -20,9 +20,9 @@ const { title, faq } = Astro.props
   <div class="grid gap-2 bs-mt-sm">
 
     <!-- Item -->
-    { faq.map( item =>
+    { faq.map((item, index) =>
 
-      <DetailsAccordion question={item.question} answer={item.answer} />
+      <DetailsAccordion question={item.question} answer={item.answer} index={index} />
 
     )}
 
@@ -30,14 +30,15 @@ const { title, faq } = Astro.props
   
   <!-- Additional Help -->
   <div class="mt-12 p-6 md:p-8 bg-bs-surface-2 rounded-xl border border-bs-surface-3 text-center">
-    <h3 class="bs-h3 mb-4">¿No encontraste tu respuesta?</h3>
-    <p class="text-bs-foreground-dark mb-6">
+    <h3 class="bs-h3 mb-4" data-i18n="faq.helpTitle">¿No encontraste tu respuesta?</h3>
+    <p class="text-bs-foreground-dark mb-6" data-i18n="faq.helpText">
       Estamos aquí para ayudarte. Contáctanos y te responderemos a la brevedad.
     </p>
     <button
       type="button"
       class="bs-btn bs-btn-primary"
       onclick="document.getElementById('contactDialog').showModal()"
+      data-i18n="faq.helpCta"
     >
       Contactar al equipo
     </button>

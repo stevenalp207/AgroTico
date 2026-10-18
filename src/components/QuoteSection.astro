@@ -13,7 +13,7 @@ const { content, image, cite, role } = Astro.props
   </svg>
 
   <!-- Text -->
-  <div set:html={ content } class="text-bs-foreground-dark bs-st-quote [&_strong]:font-normal font-display leading-relaxed" />
+  <div set:html={ content } class="text-bs-foreground-dark bs-st-quote [&_strong]:font-normal font-display leading-relaxed" data-i18n="quote.content" data-i18n-html />
 
   <!-- Cite -->
   <cite class="not-italic flex gap-4 items-center mt-4">
@@ -28,8 +28,8 @@ const { content, image, cite, role } = Astro.props
     >
 
     <div class="text-bs-foreground-light bs-h3 flex flex-col gap-1">
-      <span class="text-xl md:text-2xl">{ cite }</span>
-      <span class="text-base md:text-lg text-bs-foreground-dark font-normal">{ role }</span>
+      <span class="text-xl md:text-2xl" data-i18n="quote.cite">{ cite }</span>
+      <span class="text-base md:text-lg text-bs-foreground-dark font-normal" data-i18n="quote.role">{ role }</span>
     </div>
 
   </cite>
@@ -60,4 +60,3 @@ const { content, image, cite, role } = Astro.props
 }
 
 </style>
-

@@ -9,6 +9,8 @@ const { achievements } = Astro.props;
       <SectionHeader 
         title="Nuestros Logros 🏆" 
         subtitle="AgroTico Smart se ha destacado en competencias y reconocimientos nacionales e internacionales, mostrando el compromiso, la innovación y el talento de nuestro equipo de estudiantes costarricenses."
+        titleKey="achievements.title"
+        subtitleKey="achievements.subtitle"
       />
     </div>
 
@@ -18,7 +20,7 @@ const { achievements } = Astro.props;
           <div class="w-20 h-20 flex items-center justify-center rounded-full bg-gradient-to-br from-[#4caf50] to-[#45a049] text-white text-3xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300">
             {index === 0 ? '🥇' : index === 1 ? '🏆' : '⭐'}
           </div>
-          <h3 class="font-display text-xl font-semibold text-center group-hover:text-[#4caf50] transition-colors">{item.title}</h3>
+          <h3 class="font-display text-xl font-semibold text-center group-hover:text-[#4caf50] transition-colors" data-i18n={`achievements.items.${index}.title`}>{item.title}</h3>
           {item.year && <p class="text-sm text-bs-neutral-300 font-semibold uppercase tracking-wider">{item.year}</p>}
           {item.description && <p class="text-sm text-bs-neutral-400 text-center leading-relaxed">{item.description}</p>}
         </div>

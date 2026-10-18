@@ -8,7 +8,7 @@
     "services": "Services",
     "caseStudies": "Success Stories",
     "pricing": "Pricing",
-    "faq": "FAQ",
+    "faq": "Frequently Asked Questions",
     "contact": "Contact"
   },
   "header": {
@@ -16,7 +16,9 @@
   },
   "hero": {
     "title": "AgroTico Smart",
-    "content": "<p><strong>Costa Rican innovation transforming the countryside</strong>. We are a <strong>precision agriculture</strong> platform created by students from Don Bosco Technical Professional College, to address the challenges faced by Costa Rican farmers.</p><p>We unite <strong>education, technology and social impact</strong> to build a more sustainable future. 🌱🇨🇷</p>"
+    "content": "<p><strong>Costa Rican innovation transforming the countryside</strong>. We are a <strong>precision agriculture</strong> platform created by students from Don Bosco Technical Professional College to address the challenges faced by Costa Rican farmers.</p><p>We unite <strong>education, technology, and social impact</strong> to build a more sustainable future. 🌱🇨🇷</p>",
+    "ctaDashboard": "🚀 View Dashboard",
+    "ctaContact": "📞 Contact Us"
   },
   "sections": {
     "services": "What We Offer",
@@ -27,9 +29,15 @@
     "faq": "Frequently Asked Questions",
     "team": "Meet the Team"
   },
+  "sectionSubtitles": {
+    "caseStudies": "Real examples of how AgroTico Smart is transforming Costa Rican agriculture",
+    "clients": "Institutions and organizations that trust our project and encourage us to keep innovating",
+    "pricing": "Affordable investment to transform your agricultural production with cutting-edge technology",
+    "faq": "Have questions? Here you'll find answers to the most frequently asked questions about AgroTico Smart"
+  },
   "quote": {
     "content": "AgroTico Smart is an <strong>innovative solution</strong> that brings <strong>technology to the field</strong>. With its focus on <strong>precision agriculture</strong>, it represents the <strong>talent and vision</strong> of Costa Rican youth to transform the way we produce food.",
-    "cite": "Finalists Solve For Tomorrow 2025",
+    "cite": "Solve For Tomorrow 2025 Finalists",
     "role": "Samsung Latin America"
   },
   "footer": {
@@ -41,7 +49,7 @@
     "dashboard": "Dashboard",
     "copyright": "AgroTico Smart",
     "school": "Don Bosco Technical Professional College",
-    "achievement": "Finalists Solve For Tomorrow 2025 🏆"
+    "achievement": "Solve For Tomorrow 2025 Finalists 🏆"
   },
   "demo": {
     "title": "Dashboard",
@@ -52,5 +60,167 @@
     "current": "Current language: {{lang}}",
     "spanish": "Spanish",
     "english": "English"
+  },
+  "youtube": {
+    "title": "Our promotional video - Support us with your like",
+    "loading": "Loading...",
+    "likes": "Likes",
+    "views": "Views",
+    "comments": "Comments"
+  },
+  "dialog": {
+    "title": "🌱 Connect with AgroTico Smart",
+    "body": "We love collaborating and sharing ideas! You can follow us or contact us directly:",
+    "footer": "You can also message us on WhatsApp or email for collaborations or demos. <br />🌾 Thanks for supporting Costa Rican innovation!",
+    "close": "Close"
+  },
+  "services": {
+    "items": [
+      {
+        "title": "Smart and accessible dashboard",
+        "content": "<strong>Visualize your agricultural data in real time.</strong> Our web platform and mobile app provide alerts, reports, and clear recommendations so any producer can make confident, evidence-based decisions.",
+        "cta": "Explore the dashboard"
+      },
+      {
+        "title": "Open 3D part designs",
+        "content": "<strong>We repair, innovate, and share.</strong> Every physical AgroTico Smart part, from sensor supports to housings, has open 3D designs so anyone can print, improve, or adapt them to their needs.",
+        "cta": "Download 3D models"
+      },
+      {
+        "title": "Open and collaborative code",
+        "content": "<strong>Transparency and continuous improvement.</strong> All AgroTico Smart software is open source, encouraging global collaboration and allowing universities, developers, and farming communities to adapt and optimize it freely.",
+        "cta": "Explore our code on GitHub"
+      },
+      {
+        "title": "Training and open knowledge",
+        "content": "<strong>Technology only transforms when shared.</strong> We offer workshops, guides, and educational materials so producers, youth, and cooperatives can learn to use and maintain the system, promoting a more inclusive and sustainable agriculture.",
+        "cta": "Access our educational resources"
+      }
+    ]
+  },
+  "caseStudies": {
+    "items": [
+      {
+        "sector": "Precision agriculture",
+        "title": "Boosting agriculture.<br>Making decisions easier.",
+        "content": "<strong>AgroTico Smart helped small farmers in Chorotega and Huetar Norte make decisions based on precise microclimate and soil data.</strong> <br><br>The system optimized planting, irrigation, and fertilization, reducing losses and increasing productivity."
+      },
+      {
+        "sector": "Agricultural technology",
+        "title": "Local innovation.<br>Tangible results.",
+        "content": "<strong>We implemented local IoT sensors and AI algorithms to generate early alerts and personalized recommendations.</strong> <br><br>This allowed cooperatives to improve production consistency and increase members' income."
+      },
+      {
+        "sector": "Crop management",
+        "title": "More efficiency.<br>Less uncertainty.",
+        "content": "<strong>AgroTico Smart centralizes sensor, weather, and soil data so farmers can plan with confidence.</strong> <br><br>The result: water savings, reduced climate-event losses, and yield increases between 15% and 25%."
+      }
+    ]
+  },
+  "pricing": {
+    "items": [
+      {
+        "title": "AgroTico Smart Kit",
+        "tag": "Single product",
+        "content": "Includes all components needed to implement precision agriculture on your farm.",
+        "cta": "Buy now",
+        "services": [
+          "Electronic components and specialized sensors ($250)",
+          "3D-printed parts and physical module chassis ($100)",
+          "Cloud services and data-processing software ($50)",
+          "On-site technical training included",
+          "Local technical support for 3 years"
+        ]
+      }
+    ]
+  },
+  "faq": {
+    "helpTitle": "Didn't find your answer?",
+    "helpText": "We're here to help. Contact us and we'll reply as soon as possible.",
+    "helpCta": "Contact the team",
+    "items": [
+      {
+        "question": "What is AgroTico Smart and how does it help me?",
+        "answer": "AgroTico Smart is a comprehensive precision agriculture platform that combines IoT sensors, artificial intelligence, and satellite data to deliver personalized recommendations for planting, irrigation, fertilization, and crop selection based on your field conditions."
+      },
+      {
+        "question": "What does the AgroTico Smart kit include?",
+        "answer": "The kit includes all essential components: a Raspberry Pi processing unit, specialized sensors (BMP390, SCD30, LTR390, soil moisture), a GPS module, connectivity, software with two years of updates, three years of technical support, and in-person technical training."
+      },
+      {
+        "question": "How much does it cost and is financing available?",
+        "answer": "The base kit costs $400 USD (~₡201,000), with possible subsidies of up to 30% for small producers and two-payment financing (50% upfront and 50% post-harvest). Cooperative microcredit programs are also available for terms up to 24 months."
+      },
+      {
+        "question": "Does it work without constant internet?",
+        "answer": "Yes. The system processes data locally on the device and generates technical reports without requiring constant connectivity. Internet improves synchronization and alert delivery, but it's not required for basic operation."
+      },
+      {
+        "question": "What real benefits will I get?",
+        "answer": "AgroTico Smart helps plan planting with confidence, optimize water resources (~30% savings), reduce climate-event losses (~20%), and increase crop yield by 15% to 25%. It also empowers farmers, women, and youth, while strengthening cooperatives and rural communities."
+      },
+      {
+        "question": "Who helps me if I have product issues?",
+        "answer": "It includes three years of local technical support and in-person training. There are also local validation committees and certified technicians who can assist with installation, calibration, and maintenance."
+      },
+      {
+        "question": "Is AgroTico Smart suitable for all crops?",
+        "answer": "Initially it focuses on high-value vegetables (lettuce, tomatoes, peppers) and common crops in the Chorotega and Huetar Norte regions. The system can adapt to other crops as more data is collected and predictive models are refined."
+      },
+      {
+        "question": "How do I install the system on my farm?",
+        "answer": "Installation is simple and training is included. Our technical team guides you step by step: optimal sensor placement, system connection, initial setup, and first readings. The process takes approximately 2–3 hours."
+      },
+      {
+        "question": "Do I need advanced technical knowledge to use it?",
+        "answer": "No. AgroTico Smart is designed to be intuitive and easy to use. The dashboard shows clear information with visual alerts and plain-language recommendations. The included training will prepare you to use all features."
+      },
+      {
+        "question": "What type of warranty does the product offer?",
+        "answer": "We offer a one-year warranty on electronic components and three years of technical support. If a sensor fails, we replace it at no cost during the warranty period. We also provide free software updates."
+      },
+      {
+        "question": "Can I expand the system in the future?",
+        "answer": "Absolutely! The system is modular and scalable. You can add more sensors, expand coverage to more areas of your farm, or integrate new features as your operation grows."
+      },
+      {
+        "question": "Is the project really open source?",
+        "answer": "Yes, completely. All our code, 3D designs, and documentation are available on GitHub under open licenses. We believe in transparency and that technology should be accessible to everyone."
+      }
+    ]
+  },
+  "team": {
+    "subtitle": "🌱🤖 We are proud to present the team behind AgroTico Smart 🚜💡<br/>Our project was born with a clear goal: bring real innovation to Costa Rican agriculture, helping farmers face climate change with accessible and practical technology.",
+    "members": [
+      {
+        "role": "Academic Tutor and Mentor",
+        "bio": "He guides the team with experience and strategic vision, ensuring every technical and methodological decision follows best practices and creates real impact in rural communities."
+      },
+      {
+        "role": "Embedded Systems - Industrial Electronics",
+        "bio": "He integrates and programs the sensors, ensuring that field data is reliable and accurate."
+      },
+      {
+        "role": "Full Stack Development - Web Development",
+        "bio": "Digital platform architect, he develops the API, algorithms, and interface that deliver clear recommendations to farmers."
+      },
+      {
+        "role": "Mechanical Design and Manufacturing - Precision Mechanics",
+        "bio": "He designs the robot chassis and structure, optimizing durability, cost, and ease of local manufacturing."
+      },
+      {
+        "role": "Electronic Assembly and Integration - Industrial Electronics",
+        "bio": "He turns designs into a functional physical robot, ensuring resilience in real field conditions."
+      }
+    ]
+  },
+  "achievements": {
+    "title": "Our Achievements 🏆",
+    "subtitle": "AgroTico Smart has stood out in national and international competitions and recognitions, showcasing the commitment, innovation, and talent of our Costa Rican student team.",
+    "items": [
+      { "title": "CR SFT National Champions" },
+      { "title": "SFT Regional Finalists" },
+      { "title": "LATAM SFT Regional Champions" }
+    ]
   }
 }

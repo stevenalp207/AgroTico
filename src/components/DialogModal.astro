@@ -7,7 +7,7 @@ import SocialLinks from "./SocialLinks.astro"
   <form method="dialog" class="flex flex-col gap-6">
     <!-- Header -->
     <h2 class="bs-h2 flex justify-between items-center font-display text-bs-primary-400">
-      <span>🌱 Conecta con AgroTico Smart</span>
+      <span data-i18n="dialog.title">🌱 Conecta con AgroTico Smart</span>
       <button
         onclick="this.closest('dialog').close('close')"
         aria-label="Cerrar"
@@ -19,7 +19,7 @@ import SocialLinks from "./SocialLinks.astro"
 
     <!-- Body -->
     <div class="flex flex-col gap-6 text-center">
-      <p class="text-bs-neutral-200 text-lg">
+      <p class="text-bs-neutral-200 text-lg" data-i18n="dialog.body">
         ¡Nos encanta colaborar y compartir ideas!  
         Puedes seguirnos o escribirnos directamente:
       </p>
@@ -27,7 +27,7 @@ import SocialLinks from "./SocialLinks.astro"
       <!-- Redes sociales -->
       <SocialLinks variant="dialog" />
 
-      <p class="text-sm text-bs-neutral-400 mt-6">
+      <p class="text-sm text-bs-neutral-400 mt-6" data-i18n="dialog.footer">
         También puedes escribirnos por WhatsApp o correo para colaboraciones o demostraciones.  
         <br />🌾 ¡Gracias por apoyar la innovación tica!
       </p>
@@ -37,6 +37,7 @@ import SocialLinks from "./SocialLinks.astro"
       <button
         class="bs-btn px-6 py-3 rounded-full"
         onclick="this.closest('dialog').close('close')"
+        data-i18n="dialog.close"
       >
         Cerrar
       </button>
