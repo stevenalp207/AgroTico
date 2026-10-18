@@ -1,37 +1,60 @@
 ---
 
 import Logo from '../assets/theme-images/agroticologo.svg'
+import LanguageSelector from './LanguageSelector.astro'
 
 const { settings } = Astro.props
 
 ---
 
-<header class="fixed top-4 left-0 right-0 z-50 pointer-events-auto">
+<header class="wrapper bg-loop font-semibold">
 
-  <div class="bs-container">
-    <div class="bg-bs-surface-2/60 backdrop-blur-sm rounded-xl py-4 px-6 flex justify-between items-center shadow-md">
+  <!-- Wrapper -->
+  <div class="bs-container py-6 flex justify-between items-center gap-4">
 
-      <!-- Logo -->
-      <a class="flex xl:min-w-32 items-center gap-3 group" href="/" aria-label={ settings.title + ' - Home' }>
+    <!-- Logo -->
+    <a class="flex xl:min-w-32 group" href="/" aria-label={ settings.title + ' - Home' }>
 
-        <span class="hidden md:inline text-sm font-semibold text-bs-foreground-light">{ settings.title }</span>
+      <Logo class="relative -mt-6 group-hover:scale-[1.05] group-hover:-rotate-1 group-hover:scale-80 transition-transform ease-bs-spring duration-1000" height="100" width="100" />
 
+    </a>
+
+    <!-- Nav -->
+    <nav class="hidden col-span-6 md:flex mx-auto self-stretch lg:gap-2">
+
+      <!-- Links -->
+      <a class="bs-btn !bg-transparent before:translate-y-full hover:before:translate-y-0" href="/#servicios" data-i18n="nav.services">
+        Servicios
+      </a>
+      <a class="bs-btn !bg-transparent before:translate-y-full hover:before:translate-y-0" href="/#casos-de-exito" data-i18n="nav.caseStudies">
+        Casos de éxito
+      </a>
+      <a class="bs-btn !bg-transparent before:translate-y-full hover:before:translate-y-0" href="/#precios" data-i18n="nav.pricing">
+        Precios
+      </a>
+      <a class="bs-btn !bg-transparent before:translate-y-full hover:before:translate-y-0" href="/#faq" data-i18n="nav.faq">
+        Preguntas frecuentes
       </a>
 
-      <!-- Nav -->
-      <nav class="hidden md:flex mx-auto items-center gap-4">
-        { settings.nav.map( item => (
-          <a href={item.link} class="text-sm text-bs-foreground-dark hover:text-bs-foreground-light px-3 py-2 rounded-md transition-colors">{item.title}</a>
-        )) }
-      </nav>
+    </nav>
 
+    <!-- Right section with Language Selector and CTA -->
+    <div class="flex items-center gap-3">
+      <!-- Language Selector -->
+      <LanguageSelector />
+      
       <!-- CTA -->
-      <div class="flex items-center gap-3">
-        <a href="https://agrotico-smart-dashboard.vercel.app/" target="_blank" rel="noopener noreferrer" class="bs-btn bs-btn-primary">{ settings.demo.title }</a>
-        <button class="bs-btn" aria-label="Open menu" onclick="document.getElementById('contactDialog')?.showModal()">Contact</button>
-      </div>
-
+      <a 
+        href="https://agrotico-smart-dashboard.vercel.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="min-w-32 bs-btn bs-btn-primary text-center"
+        data-i18n="header.dashboard"
+      >
+        Dashboard
+      </a>
     </div>
+
   </div>
 
 </header>

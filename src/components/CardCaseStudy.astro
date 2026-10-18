@@ -1,6 +1,6 @@
 ---
 
-const { caseStudy } = Astro.props
+const { caseStudy, index } = Astro.props
 
 ---
 
@@ -27,15 +27,15 @@ const { caseStudy } = Astro.props
       <header class="flex flex-col gap-3">
 
         <!-- Title -->
-        <div class:list={["text-xs uppercase tracking-widest font-semibold text-transparent bg-clip-text bg-gradient-to-r", caseStudy.bg]} set:html={ caseStudy.sector } />
+        <div class:list={["text-xs uppercase tracking-widest font-semibold text-transparent bg-clip-text bg-gradient-to-r", caseStudy.bg]} set:html={ caseStudy.sector } data-i18n={`caseStudies.items.${index}.sector`} />
 
         <!-- Tag -->
-        <h2 class="font-display font-medium text-balance text-3xl md:text-4xl text-white" set:html={ caseStudy.title } />
+        <h2 class="font-display font-medium text-balance text-3xl md:text-4xl text-white" set:html={ caseStudy.title } data-i18n={`caseStudies.items.${index}.title`} data-i18n-html />
 
       </header>
 
       <!-- Intro -->
-      <div class="bs-body-text flex-grow text-balance" set:html={ caseStudy.content } />
+      <div class="bs-body-text flex-grow text-balance" set:html={ caseStudy.content } data-i18n={`caseStudies.items.${index}.content`} data-i18n-html />
 
 
     </div>

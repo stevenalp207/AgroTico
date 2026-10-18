@@ -12,10 +12,12 @@ const { title, team } = Astro.props
     <SectionHeader 
       title={title}
       subtitle={"🌱🤖 Con mucho orgullo presentamos al equipo detrás de AgroTico Smart 🚜💡<br/>Nuestro proyecto nació con un objetivo claro: llevar innovación real al campo costarricense, ayudando a los agricultores a enfrentar el cambio climático con tecnología accesible y práctica."}
+      titleKey="sections.team"
+      subtitleKey="team.subtitle"
     />
 
     <div class="flex flex-wrap justify-center gap-8">
-      {team.map((member) => (
+      {team.map((member, index) => (
         <article
           class="group w-full sm:w-[45%] lg:w-[30%] bg-bs-surface-0/50 backdrop-blur-xl border border-white/10 rounded-xl overflow-hidden hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#4caf50]/10 transition-all duration-500"
         >
@@ -31,9 +33,9 @@ const { title, team } = Astro.props
           <div class="p-6 flex flex-col gap-2 text-center">
             <h3 class="font-display text-2xl font-medium text-bs-foreground-light">{member.name}</h3>
             <p class="uppercase text-sm tracking-widest text-[#4caf50] font-semibold">
-              {member.role}
+              <span data-i18n={`team.members.${index}.role`}>{member.role}</span>
             </p>
-            <p class="text-sm text-bs-neutral-300 leading-relaxed mt-2" set:html={member.bio} />
+            <p class="text-sm text-bs-neutral-300 leading-relaxed mt-2" set:html={member.bio} data-i18n={`team.members.${index}.bio`} />
           </div>
         </article>
       ))}

@@ -2,7 +2,7 @@
 
 import Arrow from '../assets/theme-images/icon-arrow.svg'
 
-const { question, answer } = Astro.props
+const { question, answer, index } = Astro.props
 
 ---
 
@@ -13,7 +13,7 @@ class="group bg-bs-surface-2 hover:bg-bs-surface-3 open:bg-bs-surface-3 transiti
   <summary class="flex gap-3 justify-between items-center p-6 py-5">
 
     <!-- Title -->
-    <span class="select-none" set:html={ question } />
+    <span class="select-none" set:html={ question } data-i18n={`faq.items.${index}.question`} />
 
     <!-- Icon -->
     <span>
@@ -24,7 +24,7 @@ class="group bg-bs-surface-2 hover:bg-bs-surface-3 open:bg-bs-surface-3 transiti
   <!-- Content -->
   <div class="anim-wrapper max-w-none">
 
-    <div set:html={ answer } class="p-6 font-body" />
+    <div set:html={ answer } class="p-6 font-body" data-i18n={`faq.items.${index}.answer`} />
 
   </div>
 

@@ -5,10 +5,10 @@ const { title, clients } = Astro.props
 <section class="anim-wrapper bs-container bs-mt-lg grid">
 
   <!-- Title -->
-  { title && <h2 class="bs-h2 text-center mb-4" set:html={ title } />}
+  { title && <h2 class="bs-h2 text-center mb-4" set:html={ title } data-i18n="sections.clients" />}
   
   <!-- Subtitle -->
-  <p class="text-center text-bs-foreground-dark text-lg mb-8 max-w-3xl mx-auto">
+  <p class="text-center text-bs-foreground-dark text-lg mb-8 max-w-3xl mx-auto" data-i18n="sectionSubtitles.clients">
     Instituciones y organizaciones que confían en nuestro proyecto y nos impulsan a seguir innovando
   </p>
 

@@ -6,7 +6,7 @@ const API_KEY = import.meta.env.YOUTUBE_API_KEY;
          data-video-id={videoId} data-api-key={API_KEY}>
 
   <!-- Title -->
-  <h2 class="bs-h2">{title}</h2>
+  <h2 class="bs-h2" data-i18n="youtube.title">{title}</h2>
 
   <!-- Video (click-to-load placeholder) -->
   <div class="mt-4 aspect-video w-full max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-md border border-bs-surface-3 bg-bs-surface-2">
@@ -39,22 +39,22 @@ const API_KEY = import.meta.env.YOUTUBE_API_KEY;
     <!-- Likes -->
     <div class="group flex-1 inline-flex flex-col items-center justify-center px-6 py-5 border rounded-2xl bg-bs-surface-2 border-bs-surface-3 transition-all duration-300 hover:scale-[1.03] hover:shadow-lg"
          id="likes-counter">
-      <span class="text-5xl md:text-5xl font-bold text-bs-foreground">👍 Cargando...</span>
-      <span class="text-base md:text-lg text-bs-foreground-dark mt-2">Likes</span>
+      <span class="text-5xl md:text-5xl font-bold text-bs-foreground" data-i18n="youtube.loading">👍 Cargando...</span>
+      <span class="text-base md:text-lg text-bs-foreground-dark mt-2" data-i18n="youtube.likes">Likes</span>
     </div>
 
     <!-- Views -->
     <div class="group flex-1 inline-flex flex-col items-center justify-center px-6 py-5 border rounded-2xl bg-bs-surface-2 border-bs-surface-3 transition-all duration-300 hover:scale-[1.03] hover:shadow-lg"
          id="views-counter">
-      <span class="text-5xl md:text-5xl font-bold text-bs-foreground">👀 Cargando...</span>
-      <span class="text-base md:text-lg text-bs-foreground-dark mt-2">Vistas</span>
+      <span class="text-5xl md:text-5xl font-bold text-bs-foreground" data-i18n="youtube.loading">👀 Cargando...</span>
+      <span class="text-base md:text-lg text-bs-foreground-dark mt-2" data-i18n="youtube.views">Vistas</span>
     </div>
 
     <!-- Comments -->
     <div class="group flex-1 inline-flex flex-col items-center justify-center px-6 py-5 border rounded-2xl bg-bs-surface-2 border-bs-surface-3 transition-all duration-300 hover:scale-[1.03] hover:shadow-lg"
          id="comments-counter">
-      <span class="text-5xl md:text-5xl font-bold text-bs-foreground">💬 Cargando...</span>
-      <span class="text-base md:text-lg text-bs-foreground-dark mt-2">Comentarios</span>
+      <span class="text-5xl md:text-5xl font-bold text-bs-foreground" data-i18n="youtube.loading">💬 Cargando...</span>
+      <span class="text-base md:text-lg text-bs-foreground-dark mt-2" data-i18n="youtube.comments">Comentarios</span>
     </div>
 
   </div>

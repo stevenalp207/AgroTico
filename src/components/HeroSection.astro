@@ -1,20 +1,51 @@
 ---
 
 import Image from "astro/components/Image.astro"
-import logo from "../assets/theme-images/agroticologo.svg"
+import hero_screens from "../assets/theme-images/hero-screens.png"
 
-const { settings } = Astro.props
+const { settings, title, content } = Astro.props
 
 ---
 
-<section class="hero-root">
-  <div class="hero-overlay" aria-hidden="true"></div>
+<section class="bs-container py-6 flex flex-col lg:flex-row items-center gap-8">
 
-  <div class="hero-inner text-center">
+  <!-- Content -->
+  <div class="flex flex-col gap-6 lg:max-w-lg w-full py-16">
 
-    <figure class="hero-logo" aria-hidden="false">
-      <Image src={logo} alt={settings?.siteName ?? 'Logo'} loading="eager" sizes="(min-width:1280px) 70vw, 90vw" />
-    </figure>
+    <!-- Title -->
+    <h1 class="bs-h1" set:html={ title } data-i18n="hero.title" />
+
+    <!-- Content -->
+    <div class="bs-body-text xl:text-xl flex flex-col gap-4 [&_p]:last:text-bs-foreground-dark" set:html={ content } data-i18n="hero.content" data-i18n-html />
+
+    <!-- CTA Buttons -->
+    <div class="flex flex-col sm:flex-row gap-4 mt-4">
+      <a 
+        href="https://agrotico-smart-dashboard.vercel.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="bs-btn bs-btn-primary text-center"
+        data-i18n="hero.ctaDashboard"
+      >
+        🚀 Ver Dashboard
+      </a>
+      <button
+        type="button"
+        class="bs-btn"
+        onclick="document.getElementById('contactDialog').showModal()"
+        data-i18n="hero.ctaContact"
+      >
+        📞 Contáctanos
+      </button>
+    </div>
 
   </div>
+
+  <!-- Image -->
+  <figure class="flex place-content-center -mt-20 lg:mt-0">
+
+    <Image src={ hero_screens } format="avif" quality="high" alt="Screens showing phone, tablet and desktop views of our website" loading="eager" />
+
+  </figure>
+
 </section>

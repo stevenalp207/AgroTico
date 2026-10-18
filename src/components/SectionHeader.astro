@@ -8,13 +8,17 @@ interface Props {
   subtitle?: string;
   centered?: boolean;
   maxWidth?: string;
+  titleKey?: string;
+  subtitleKey?: string;
 }
 
 const { 
   title, 
   subtitle, 
   centered = true,
-  maxWidth = "3xl"
+  maxWidth = "3xl",
+  titleKey,
+  subtitleKey
 } = Astro.props;
 
 const alignmentClass = centered ? "text-center" : "text-center md:text-left";
@@ -22,8 +26,8 @@ const containerClass = centered ? `text-center max-w-${maxWidth} mx-auto` : "";
 ---
 
 <header class:list={["flex flex-col gap-4", containerClass]}>
-  <h2 class:list={["bs-h2", alignmentClass]}>{title}</h2>
+  <h2 class:list={["bs-h2", alignmentClass]} data-i18n={titleKey}>{title}</h2>
   {subtitle && (
-    <p class="text-bs-neutral-200 text-lg leading-relaxed" set:html={subtitle} />
+    <p class="text-bs-neutral-200 text-lg leading-relaxed" set:html={subtitle} data-i18n={subtitleKey} data-i18n-html />
   )}
 </header>

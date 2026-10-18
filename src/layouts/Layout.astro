@@ -20,14 +20,14 @@ const { title, description } = Astro.props
 
 ---
 
-<html lang="es">
+<html lang="es" id="html-root">
 
   <head>
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>{ title ?? global_settings.title }</title>
+    <title data-i18n-title="site.title">{ title ?? global_settings.title }</title>
 
     <link rel="icon" type="image/svg+xml" href="/AgroTicoFavicon.svg" />
     <link rel="manifest" href="/manifest.json" />
@@ -55,13 +55,20 @@ const { title, description } = Astro.props
 
     <Font cssVariable="--font-garet-heavy" preload />
     <Font cssVariable="--font-garet-book" preload />
+    
+    <!-- Initialize language from localStorage -->
+    <script is:inline>
+      // Set language on initial load from localStorage
+      const savedLang = localStorage.getItem('language') || 'es';
+      document.documentElement.lang = savedLang;
+    </script>
 
   </head>
 
   <body id="top">
 
     <!-- Skip link -->
-    <a class="fixed -top-20 left-4 z-[9999] focus-visible:top-4 p-4 bg-[#4caf50] text-black font-semibold rounded-lg shadow-lg transition-all duration-300 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#4caf50]/50" href="#main">Saltar al contenido principal</a>
+    <a class="fixed -top-20 left-4 z-[9999] focus-visible:top-4 p-4 bg-[#4caf50] text-black font-semibold rounded-lg shadow-lg transition-all duration-300 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#4caf50]/50" href="#main" data-i18n="site.skipToContent">Saltar al contenido principal</a>
 
     <!-- Header -->
     <HeaderMain settings={ global_settings } />
