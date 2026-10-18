@@ -8,8 +8,12 @@
 }
 
 body {
-  @apply bg-bs-surface-1 text-bs-foreground-light font-body;
+  @apply text-bs-foreground-light font-body;
   min-height: 100vh;
+  background-image: radial-gradient(1200px 400px at 10% 10%, rgba(255,255,255,0.02), transparent),
+                    linear-gradient(180deg, var(--color-bs-surface-0), var(--color-bs-surface-1));
+  background-color: var(--color-bs-surface-1);
+  background-attachment: fixed;
 }
 
 ::selection {
